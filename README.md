@@ -26,7 +26,7 @@ You can also set the language in which the results of the api requests are retur
 
 ## Dev
 
-The locations are stored in the respective user meta data with the key "whab_location_data", as an array in the following format:
+The individual locations are stored in the respective user meta data with the key "whab_location_data", as an array in the following format:
 
 ```
 {
