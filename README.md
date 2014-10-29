@@ -48,3 +48,20 @@ Example, how you can get the geo location:
 ```php
 $geo_location = $location['geo'];
 ```
+
+* * *
+
+## Changelog
+
+### 0.4.0
+* Per user location: Each user can now set her/his individual location via the WordPress dashboard.
+* You can also choose which user's location to display per widget.
+
+### 0.3.0
+* You can now choose the time format in which the local time is displayed
+
+###0.2.0
+* Whereabouts is live
+
+###0.1.0
+* Somehow this got skipped...
