@@ -1,0 +1,316 @@
+/**
+ *  Dashboard widget
+ */
+#whereabouts-dashboard-widget .whab-settings {
+  position: absolute;
+  top: -42px;
+  right: 40px;
+}
+@media only screen and (min-width: 782px) {
+  #whereabouts-dashboard-widget .whab-settings {
+    top: -38px;
+  }
+}
+#whereabouts-dashboard-widget .whab-settings:before {
+  content: "\f111";
+  font-family: "dashicons";
+  font-size: 18px;
+  line-height: 1;
+}
+#whereabouts-dashboard-widget .whab-settings span {
+  position: absolute;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+#whereabouts-dashboard-widget .whab-message {
+  margin: 0 0 10px 0;
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+}
+#whereabouts-dashboard-widget #whab-map {
+  margin-bottom: 20px;
+  height: 200px;
+}
+#whereabouts-dashboard-widget .whab-location-input-wrapper {
+  position: relative;
+}
+#whereabouts-dashboard-widget label {
+  margin-bottom: 2px;
+  display: block;
+}
+#whereabouts-dashboard-widget p {
+  position: relative;
+  margin: 0 0 12px 0;
+}
+#whereabouts-dashboard-widget p:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+#whereabouts-dashboard-widget p.whab-col-25 {
+  float: left;
+  width: 25%;
+}
+#whereabouts-dashboard-widget p.whab-col-25 select {
+  width: 100%;
+}
+#whereabouts-dashboard-widget p.whab-col-75 {
+  float: left;
+  padding-left: 2%;
+  width: 73%;
+}
+#whereabouts-dashboard-widget p.whab-col-75 input {
+  width: 100%;
+}
+#whereabouts-dashboard-widget #whab-location-name {
+  width: 99%;
+  height: 36px;
+  padding-right: 130px;
+}
+@media only screen and (min-width: 782px) {
+  #whereabouts-dashboard-widget #whab-location-name {
+    height: 27px;
+  }
+}
+#whereabouts-dashboard-widget #whab-get-location-data {
+  position: absolute;
+  top: 22px;
+  right: 0px;
+  padding-top: 0;
+  padding-bottom: 1px;
+  height: 36px;
+  font-size: 12px;
+  line-height: 1;
+  border-radius: 0 3px 3px 0;
+  box-shadow: none;
+}
+@media only screen and (min-width: 782px) {
+  #whereabouts-dashboard-widget #whab-get-location-data {
+    padding-top: 1px;
+    height: 27px;
+  }
+}
+#whereabouts-dashboard-widget #timezone_name {
+  height: 36px;
+}
+@media only screen and (min-width: 782px) {
+  #whereabouts-dashboard-widget #timezone_name {
+    height: 27px;
+  }
+}
+#whereabouts-dashboard-widget .whab-location-box {
+  display: none;
+  position: relative;
+  margin: -2px 0 10px 0;
+  padding: 15px 20px;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+}
+#whereabouts-dashboard-widget .whab-location-box:before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  width: 0px;
+  height: 0px;
+  border: 10px solid transparent;
+  border-bottom: 10px solid #f5f5f5;
+}
+#whereabouts-dashboard-widget .whab-location-box p {
+  margin: 0;
+}
+#whereabouts-dashboard-widget .whab-location-box p.whab-language-settings-hint {
+  margin-top: 10px;
+}
+#whereabouts-dashboard-widget .whab-location-box .label {
+  clear: both;
+  display: block;
+}
+#whereabouts-dashboard-widget .whab-location-box #whab-temp-location-name {
+  font-weight: bold;
+}
+#whereabouts-dashboard-widget .whab-location-box #whab-use-location-name {
+  margin: -2px 6px 0 3px;
+  -webkit-transform: rotate(-85deg);
+      -ms-transform: rotate(-85deg);
+          transform: rotate(-85deg);
+}
+#whereabouts-dashboard-widget .whab-location-box #whab-use-location-name span {
+  position: absolute;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+#whereabouts-dashboard-widget .whab-success {
+  position: relative;
+  margin: -2px 0 10px 0;
+  padding: 15px 20px;
+  color: #2f530e;
+  background-color: #a0e463;
+  border-radius: 3px;
+}
+#whereabouts-dashboard-widget .whab-error {
+  position: relative;
+  margin: -2px 0 10px 0;
+  padding: 15px 20px;
+  color: white;
+  background-color: #dd3d36;
+  border-radius: 3px;
+}
+#whereabouts-dashboard-widget .whab-error.location:before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  width: 0px;
+  height: 0px;
+  border: 10px solid transparent;
+  border-bottom: 10px solid #f5f5f5;
+  border-bottom: 10px solid #dd3d36;
+}
+#whereabouts-dashboard-widget .whab-wceu {
+  padding: 15px 20px;
+  background-color: #f9f9f9;
+}
+#whereabouts-dashboard-widget .whab-save {
+  clear: both;
+  padding-top: 5px;
+}
+
+/**
+ *  Settings form
+ */
+.whab-settings-form {
+  padding-top: 10px;
+}
+.whab-settings-form p {
+  display: block;
+}
+.whab-settings-form p:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+.whab-settings-form label {
+  float: left;
+  padding-top: 6px;
+  width: 210px;
+}
+.whab-settings-form label.after {
+  float: none;
+  width: auto;
+}
+@media only screen and (max-width: 600px) {
+  .whab-settings-form label {
+    display: block;
+    margin-bottom: 4px;
+    float: none;
+  }
+}
+.whab-settings-form input[type="checkbox"] {
+  display: inline-block;
+  margin-right: 5px;
+}
+.whab-settings-form input[type="text"] {
+  float: left;
+}
+.whab-settings-form #whab-validate-key {
+  margin-top: 1px;
+  height: 36px;
+}
+@media only screen and (min-width: 782px) {
+  .whab-settings-form #whab-validate-key {
+    height: 27px;
+  }
+}
+.whab-settings-form .whab-loading {
+  display: none;
+  float: left;
+  margin: 4px 8px 4px 4px;
+}
+.whab-settings-form .whab-loading:before {
+  content: '';
+  display: block;
+  float: left;
+  background: url(/wp-admin/images/spinner-2x.gif) no-repeat 0 0;
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+.whab-settings-form .whab-loading span {
+  position: absolute;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.whab-settings-form .whab-valid {
+  margin-right: 2px;
+  float: left;
+}
+.whab-settings-form .whab-valid:before {
+  content: "\f147";
+  font-family: "dashicons";
+  font-size: 30px;
+  line-height: 1;
+  color: #7ad03a;
+}
+.whab-settings-form .whab-valid span {
+  position: absolute;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.whab-settings-form .whab-invalid {
+  margin-right: 2px;
+  float: left;
+}
+.whab-settings-form .whab-invalid:before {
+  content: "\f158";
+  font-family: "dashicons";
+  font-size: 30px;
+  line-height: 1;
+  color: #dd3d36;
+}
+.whab-settings-form .whab-invalid span {
+  position: absolute;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.clear {
+  clear: both;
+}
+
+/**
+ * Widget
+ */
+.widget-content .whab-pair {
+  margin: 0 20px 0 0;
+  white-space: nowrap;
+}
+
+.whab_widget_user_select label {
+  display: block;
+}

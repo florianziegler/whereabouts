@@ -1,0 +1,330 @@
+
+@mixin list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+@mixin clear-after {
+    &:after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+}
+@mixin visually-hidden {
+    position: absolute;
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+$break: 782px;
+
+/**
+ *  Dashboard widget
+ */
+
+#whereabouts-dashboard-widget {
+    
+    .whab-settings {
+        position: absolute;
+        top: -42px;
+        right: 40px;
+        
+
+        @media only screen and (min-width: $break) {
+            top: -38px;
+        }
+
+        &:before {
+            content: "\f111";
+            font-family: "dashicons";
+            font-size: 18px;
+            line-height: 1;
+        }
+        span {
+            @include visually-hidden
+        }
+    }
+    
+    .whab-message {
+        margin: 0 0 10px 0;
+        padding: 10px 15px;
+        background-color: #f5f5f5;
+    }
+    
+    #whab-map {
+        margin-bottom: 20px;
+        height: 200px;
+    }
+    
+    .whab-location-input-wrapper {
+        position: relative;
+    }
+
+    label {
+        margin-bottom: 2px;
+        display: block;
+    }
+    
+    p {
+        @include clear-after;
+        position: relative;
+        margin: 0 0 12px 0;
+    }
+    p.whab-col-25 {
+        float: left;
+        width: 25%;
+        
+        select {
+            width: 100%;
+        }
+    }
+    p.whab-col-75 {
+        float: left;
+        padding-left: 2%;
+        width: 73%;
+        input {
+            width: 100%;
+        }
+    }
+    
+    #whab-location-name {
+        width: 99%;
+        height: 36px;
+        padding-right: 130px;
+        
+        @media only screen and (min-width: $break) {
+            height: 27px;
+        }
+    }
+    #whab-get-location-data {
+        position: absolute;
+        top: 22px;
+        right: 0px;
+        padding-top: 0;
+        padding-bottom: 1px;
+        height: 36px;
+        font-size: 12px;
+        line-height: 1;
+        border-radius: 0 3px 3px 0;
+        box-shadow: none;
+        
+
+        @media only screen and (min-width: $break) {
+            padding-top: 1px;
+            height: 27px;
+        }
+    }
+    #timezone_name {
+        height: 36px;
+
+        @media only screen and (min-width: $break) {
+            height: 27px;
+        }
+    }
+
+    .whab-location-box {
+        display: none;
+        position: relative;
+        margin: -2px 0 10px 0;
+        padding: 15px 20px;
+        background-color: #f5f5f5;
+        border-radius: 3px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            width: 0px;
+            height: 0px;
+            border: 10px solid transparent;
+            border-bottom: 10px solid #f5f5f5;
+        }
+    
+        p {
+            margin: 0;
+            
+            &.whab-language-settings-hint {
+                margin-top: 10px;
+            }
+        }
+
+        .label {
+            clear: both;
+            display: block;
+        }
+
+        #whab-temp-location-name {
+            font-weight: bold;
+        }
+        
+        #whab-use-location-name {
+            margin: -2px 6px 0 3px;
+            transform: rotate( -85deg );
+
+            span {
+                @include visually-hidden;
+            }
+        }
+    }
+    .whab-success {
+        position: relative;
+        margin: -2px 0 10px 0;
+        padding: 15px 20px;
+        color: darken(#79D525, 30%);
+        background-color: lighten(#79D525, 15%);
+        border-radius: 3px;        
+    }    
+    .whab-error {
+        position: relative;
+        margin: -2px 0 10px 0;
+        padding: 15px 20px;
+        color: white;
+        background-color: #dd3d36;
+        border-radius: 3px;
+
+        &.location {
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: -20px;
+                left: 20px;
+                width: 0px;
+                height: 0px;
+                border: 10px solid transparent;
+                border-bottom: 10px solid #f5f5f5;
+                border-bottom: 10px solid #dd3d36;
+            }
+        }
+    }
+    .whab-wceu {
+        padding: 15px 20px;
+        background-color: #f9f9f9;
+    }
+    .whab-save {
+        clear: both;
+        padding-top: 5px;
+    }
+}
+
+
+/**
+ *  Settings form
+ */
+
+.whab-settings-form {
+    padding-top: 10px;
+
+    p {
+        @include clear-after;
+        display: block;
+    }
+    
+    label {
+        float: left;
+        padding-top: 6px;
+        width: 210px;
+        
+        &.after {
+            float: none;
+            width: auto;
+        }
+        @media only screen and (max-width: 600px) {
+            display: block;
+            margin-bottom: 4px;
+            float: none;
+        }
+    }
+    
+    input[type="checkbox"] {
+        display: inline-block;
+        margin-right: 5px;
+    }
+    input[type="text"] {
+        float: left;
+    }
+
+    #whab-validate-key {
+        margin-top: 1px;
+        height: 36px;
+
+        @media only screen and (min-width: $break) {
+            height: 27px;
+        }
+    }
+    .whab-loading {
+        display: none;
+        float: left;
+        margin: 4px 8px 4px 4px;
+
+        &:before {
+            content: '';
+            display: block;
+            float: left;
+            background: url(/wp-admin/images/spinner-2x.gif) no-repeat 0 0;
+            background-size: 20px;
+            width: 20px;
+            height: 20px;
+        }
+        span {
+            @include visually-hidden;
+        }
+    }
+    .whab-valid {
+        margin-right: 2px;
+        float: left;
+
+        &:before {
+            content: "\f147";
+            font-family: "dashicons";
+            font-size: 30px;
+            line-height: 1;
+            color: #7ad03a;
+        }
+        span {
+            @include visually-hidden;
+        }
+    }
+    .whab-invalid {
+        margin-right: 2px;
+        float: left;
+
+        &:before {
+            content: "\f158";
+            font-family: "dashicons";
+            font-size: 30px;
+            line-height: 1;
+            color: #dd3d36;
+        }
+        span {
+            @include visually-hidden;
+        }
+    }
+    
+}
+
+.clear {
+    clear: both;
+}
+
+/**
+ * Widget
+ */
+.widget-content {
+
+    .whab-pair {
+        margin: 0 20px 0 0;
+        white-space: nowrap;
+    }
+}
+
+.whab_widget_user_select label {
+    display: block;
+}
