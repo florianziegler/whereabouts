@@ -31,7 +31,7 @@ The individual locations are stored in the respective user meta data with the ke
 ```
 {
     'location_name'  => 'Paris, France',
-    'utc_difference' => '3600', // offset to UTC in milliseconds
+    'utc_difference' => '3600', // offset to UTC in seconds
     'timezone_name'  => 'Central European Standard Time',
     'geo'            => '48.856614, 2.3522219' // latitude, longitude
 }

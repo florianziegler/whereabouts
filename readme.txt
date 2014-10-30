@@ -12,6 +12,16 @@ Users can set their current location via the WordPress dashboard. A widget displ
 
 == Description ==
 
+__Please note:__
+
+When you upgrade from 0.3.0 to a newer version, you have to (re) add the Whereabouts widget.
+
+Go to "Appearance > Widgets" and drag the Whereabouts widget to the sidebar of your choosing.
+
+From version 0.4.0 (or newer) the location is saved _per user_. You can choose the user, whose location you want to display, in the widget's options.
+
+* * *
+
 Each user can save his/her current location and the corresponding time (zone). The information is stored as user meta data.
 
 The Whereabouts widget displays the location and time (zone) of a specified user (select user in the widget options).
@@ -69,17 +79,6 @@ You must save a location, otherwise the widget won't be displayed.
 
 1. Use the Whereabouts dashboard widget to enter your location
 2. Customize the Whereabouts widget
-
-
-== Upgrade Notice ==
-
-__Please note:__
-
-When you upgrade from 0.3.0 to a newer version, you have to (re) add the Whereabouts widget.
-
-Go to "Appearance > Widgets" and drag the Whereabouts widget to the sidebar of your choosing.
-
-From version 0.4.0 (or newer) the location is saved _per user_. You can choose the user, whose location you want to display, in the widget's options.
 
 
 == Changelog ==
