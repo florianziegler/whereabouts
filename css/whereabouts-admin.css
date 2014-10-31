@@ -189,6 +189,10 @@
 /**
  *  Settings form
  */
+.settings_page_whereabouts .wrap .updated {
+  margin-bottom: 0;
+}
+
 .whab-settings-form {
   padding-top: 10px;
 }
@@ -205,10 +209,6 @@
   padding-top: 6px;
   width: 210px;
 }
-.whab-settings-form label.after {
-  float: none;
-  width: auto;
-}
 @media only screen and (max-width: 600px) {
   .whab-settings-form label {
     display: block;
@@ -216,7 +216,32 @@
     float: none;
   }
 }
+.whab-settings-form label.after {
+  display: inline;
+  padding-top: 0;
+  width: auto;
+}
+@media only screen and (max-width: 600px) {
+  .whab-settings-form label.after {
+    float: none;
+    display: inline;
+    margin-bottom: 4px;
+  }
+}
+.whab-settings-form .role {
+  display: inline-block;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 600px) {
+  .whab-settings-form .role {
+    margin-bottom: 15px;
+  }
+}
+.whab-settings-form .role label.after {
+  margin-right: 15px;
+}
 .whab-settings-form input[type="checkbox"] {
+  float: left;
   display: inline-block;
   margin-right: 5px;
 }

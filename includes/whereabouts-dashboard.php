@@ -15,17 +15,29 @@
 add_action( 'wp_dashboard_setup', 'whereabouts_add_dashboard_widget' );
 
 function whereabouts_add_dashboard_widget() {
-    
+
+    // Load user roles, that are allowed to use the widget
     $settings = get_option( 'whab_settings' );
+    $allowed_user_roles = $settings['allowed_user_roles'];
 
+    // Get current user information
     $current_user = wp_get_current_user();
-    if ( !( $current_user instanceof WP_User ) ) { return; }
+    if ( ! ( $current_user instanceof WP_User ) ) { return; }
 
-	wp_add_dashboard_widget(
-        'whereabouts-dashboard-widget',
-        'Whereabouts (' . $current_user->display_name . ')',
-        'whereabouts_build_dashboard_widget'
-    );	
+    // Check if allowed_user_roles has been set yet, or if it indeed hasn't
+    if ( ! isset( $settings['allowed_user_roles'] ) OR ( is_array( $current_user->roles ) AND is_array( $allowed_user_roles ) ) ) {
+
+        // Check again if allowed_user_roles has been set, or if the current user's role is among the allowed roles
+        if ( ! isset( $settings['allowed_user_roles'] ) OR array_intersect( $allowed_user_roles, $current_user->roles ) ) {
+
+        	wp_add_dashboard_widget(
+                'whereabouts-dashboard-widget',
+                'Whereabouts (' . $current_user->display_name . ')',
+                'whereabouts_build_dashboard_widget'
+            );
+
+        }
+    }
 }
 
 

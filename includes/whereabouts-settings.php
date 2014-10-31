@@ -50,6 +50,7 @@ function whereabouts_validate_save_location( $args ) {
 
         // Get current user id
         $current_user = wp_get_current_user();
+
         if ( !( $current_user instanceof WP_User ) ) { return; }
         $options = get_user_meta( $current_user->ID, 'whab_location_data', true );
 
@@ -84,6 +85,24 @@ function whereabouts_validate_save_location( $args ) {
 
 function whereabouts_settings_validate( $args ) {
 
+    // Sanitize allowed roles
+    if ( isset( $args['allowed_user_roles'] ) AND is_array( $args['allowed_user_roles'] ) ) {
+        // Get all possibble roles
+        global $wp_roles;
+        if ( ! isset( $wp_roles ) ) {
+            $wp_roles = new WP_Roles();
+        }
+        $possible_roles = $wp_roles->get_names();
+        // We only need the "slug"
+        $possible_roles = array_keys( $possible_roles );
+
+        // We keep those roles, that exist in both arrays
+        $args['allowed_user_roles'] = array_intersect( $args['allowed_user_roles'], $possible_roles );
+    }
+    else {
+        $args['allowed_user_roles'] = false;
+    }
+    
     // use-google can either be true or false... make sure it is either one of them
     if ( ! empty( $args['use_google'] ) ) {
         if ( $args['use_google'] != true ) {
