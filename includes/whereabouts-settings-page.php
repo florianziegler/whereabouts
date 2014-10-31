@@ -20,9 +20,42 @@ function whereabouts_load_menu_page() {
         <?php
             settings_fields( 'whab_settings' );
             $options = get_option( 'whab_settings' );
-
+        ?>
+            <p><strong><?php _e( 'Select users that are allowed to set their location', 'whereabouts' ); ?>:</strong></p>
+            <p>
+            <?php
+            // Get allowed user roles from the settings
+            if ( isset( $options['allowed_user_roles'] ) && ! empty(  $options['allowed_user_roles'] ) ) { 
+                // Get allowed roles
+            }
+            else {
+                // If users are not set, everyone is allowed to set their location!
+                $allowed_user_roles = array( 'administrator', 'editor', 'author', 'contributor', 'subscriber' );
+                // TODO: We have to do this another way: if you want to support ALL rolese, not only the standard ones...
+                // TODO: Test languages...
+            }
+            global $wp_roles;
+ 
+            if ( ! isset( $wp_roles ) )
+            	$wp_roles = new WP_Roles();
+            	$roles = $wp_roles->get_names();
+ 
+            	foreach ($roles as $role_value => $role_name) {
+                    if ( in_array( $role_value, $allowed_user_roles ) ) {
+                        $checked = ' checked="checked"';
+                    }
+                    else {
+                        $checked = '';
+                    }
+            		echo '<span class="role"><input type="checkbox" id="' . $role_value . '" name="whab_settings[allowed_user_roles][' . $role_value . ']" value="' . $role_value . '"' . $checked . '><label class="after" for="' . $role_value . '">' . $role_name . '</label></span>';
+              	}
+ 
+            ?>
+        <?php
             if ( isset( $options['use_google'] ) && $options['use_google'] == true ) { $checked = ' checked="checked"'; } else { $checked = ''; }
             ?>
+            </p>
+            <hr />
             <p><input type="checkbox" id="whab-use-google" name="whab_settings[use_google]" value="1"<?php echo $checked; ?> /> <label class="after" for="whab-use-google"><strong><?php _e( 'Use Google to get location data', 'whereabouts' ); ?></strong></label></p>
             <p><?php _e( 'If you check this box, the Whereabouts plugin will send a request to the Google Geocoding API using the content of the location input field in order to retrieve information about the given location. The time zone will be set for you automatically and you have the option to use the official location name provided by Google.', 'whereabouts' ); ?></p>
             <hr />

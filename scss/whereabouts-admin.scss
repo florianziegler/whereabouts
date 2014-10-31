@@ -226,7 +226,11 @@ $break: 782px;
         @include clear-after;
         display: block;
     }
-    
+    .role {
+        display: inline-block;
+        margin: 0 20px 0 0;
+        white-space: nowrap;
+    }
     label {
         float: left;
         padding-top: 6px;

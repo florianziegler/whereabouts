@@ -200,6 +200,11 @@
   clear: both;
   display: block;
 }
+.whab-settings-form .role {
+  display: inline-block;
+  margin: 0 20px 0 0;
+  white-space: nowrap;
+}
 .whab-settings-form label {
   float: left;
   padding-top: 6px;
