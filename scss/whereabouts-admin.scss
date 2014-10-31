@@ -219,6 +219,11 @@ $break: 782px;
  *  Settings form
  */
 
+.settings_page_whereabouts {
+    .wrap .updated {
+        margin-bottom: 0;
+    }
+}
 .whab-settings-form {
     padding-top: 10px;
 
@@ -226,28 +231,45 @@ $break: 782px;
         @include clear-after;
         display: block;
     }
-    .role {
-        display: inline-block;
-        margin: 0 20px 0 0;
-        white-space: nowrap;
-    }
+
     label {
         float: left;
         padding-top: 6px;
         width: 210px;
-        
-        &.after {
-            float: none;
-            width: auto;
-        }
+
         @media only screen and (max-width: 600px) {
             display: block;
             margin-bottom: 4px;
             float: none;
         }
+
+        &.after {
+            display: inline;
+            padding-top: 0;
+            width: auto;
+
+            @media only screen and (max-width: 600px) {
+                float: none;
+                display: inline;
+                margin-bottom: 4px;
+            }
+        }
+    }
+    .role {
+        display: inline-block;
+        white-space: nowrap;
+
+        @media only screen and (max-width: 600px) {
+            margin-bottom: 15px;
+        }
+        
+        label.after {
+            margin-right: 15px;
+        }
     }
     
     input[type="checkbox"] {
+        float: left;
         display: inline-block;
         margin-right: 5px;
     }
