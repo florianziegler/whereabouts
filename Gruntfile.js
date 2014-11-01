@@ -52,7 +52,7 @@ module.exports = function( grunt ) {
         rsync: {
             options: {
                 args: ["--verbose"],
-                exclude: [".DS_Store",".git*",".sass-cache","assets","main.js","node_modules","scss","svg","Gruntfile.js","package.json"],
+                exclude: [".DS_Store",".git*",".sass-cache","assets","whereabouts.css","main.js","node_modules","scss","svg","Gruntfile.js","package.json","README.md"],
                 recursive: true
             },
             dist: {
