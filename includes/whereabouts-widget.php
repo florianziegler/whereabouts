@@ -47,7 +47,8 @@ class Whereabouts_Widget extends WP_Widget {
         if ( ! empty( $title ) ) {
             echo $args['before_title'] . $title . $args['after_title'];
         }
-        echo whereabouts_display_location( $link_location, $show_tz, $time_format, $user );
+        $input = array( 'link_location' => $link_location, 'show_tz' => $show_tz, 'time_format' => $time_format, 'user' => $user );
+        echo whereabouts_display_location( $input );
         echo $args['after_widget'];
 
         

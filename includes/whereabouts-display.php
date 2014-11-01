@@ -12,25 +12,30 @@
  * @since 0.1.0
  */
 
-function whereabouts_display_location( $link_location = false, $show_tz = false, $time_format = 'H:i', $user = false ) {
+function whereabouts_display_location( $args ) {
     
+    // If use standard if no time format is specified
+    if ( empty( $args['time_format'] ) ) {
+        $args['time_format'] = 'H:i';
+    }
+
     // Check if user exists...
-    $user_exists = get_user_by( 'id', $user );
+    $user_exists = get_user_by( 'id', $args['user'] );
 
     // ...and has location data.
-    $location = get_user_meta( $user, 'whab_location_data', true );
+    $location = get_user_meta( $args['user'], 'whab_location_data', true );
 
-    if ( $user_exists AND !empty( $location) ) {
+    if ( $user_exists AND ! empty( $location) ) {
 
         $output = '<dl class="whab-info">
                      <dt class="whab-label whab-label-location">' . __( 'Current Location:', 'whereabouts' ) . '</dt>
                      <dd class="whab-location">';
                  
-        if ( $link_location == true ) {
+        if ( $args['link_location'] == true ) {
             $output .= '<a title="Show location on Google Maps" href="https://www.google.co.uk/maps/place/' . str_replace( ' ', '', $location['location_name'] ) . '">';
         }
         $output .= $location['location_name'];
-        if ( $link_location == true ) {    
+        if ( $args['link_location'] == true ) {    
             $output .= '</a>';
          }
         $output .= '</dd>
@@ -42,11 +47,11 @@ function whereabouts_display_location( $link_location = false, $show_tz = false,
         $output .= '<dd class="whab-time">';
 
         $current_time = time();
-        $current_time = date( $time_format, $current_time + $offset );
+        $current_time = date( $args['time_format'], $current_time + $offset );
 
         $output .= $current_time;
 
-        if ( $show_tz == true AND !empty( $timezone_name ) ) {
+        if ( $args['show_tz'] == true AND !empty( $timezone_name ) ) {
             $output .= ' <span class="whab-timezone-name"> (' . $timezone_name . ')</span>';
         }
 
@@ -59,4 +64,14 @@ function whereabouts_display_location( $link_location = false, $show_tz = false,
         return;
     }
 }
+
+
+/**
+ * Display location via shortcode
+ *
+ * @since 0.5.0
+ */
+
+add_shortcode( 'whereabouts', 'whereabouts_display_location' );
+
 ?>

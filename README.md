@@ -53,6 +53,11 @@ $geo_location = $location['geo'];
 
 ## Changelog
 
+### 0.5.0
+
+* The admin can now allow/deny access to the dashboard widget by user role
+* Display the location anywhere in your theme by using the shortcode [whereabouts]
+
 ### 0.4.0
 * Per user location: Each user can now set her/his individual location via the WordPress dashboard.
 * You can also choose which user's location to display per widget.
