@@ -12,7 +12,7 @@ Each user can save his/her current location and the corresponding time (zone). T
 
 The Whereabouts widget displays the location and time (zone) of a specified user (select user in the widget options).
 
-You can - of course - add multiple widgets to show more than one location.
+You can - of course - add multiple widgets to show more than one user/location.
 
 ### Dashboard-Widget
 Each user can comfortably set her/his current location directly on the WordPress dashboard.
@@ -21,6 +21,33 @@ Each user can comfortably set her/his current location directly on the WordPress
 Activate the use of the Google Geocoding and Timezone API in the settings: The Plugin will then set the time zone of your whereabouts automatically, when entering a new location.
 
 You can also set the language in which the results of the api requests are returned.
+
+* * *
+
+## Displaying the location
+
+### Widget
+
+You can use a standard widget to display the location for a specified user.
+
+There is **no extra styling** for the widget. You can however do it yourself, in your theme. This is what the HTML looks like:
+
+```
+<dl class="whab-info">
+    <dt class="whab-label whab-label-location">Current Location:</dt>
+    <dd class="whab-location">...</dd>
+    <dt class="whab-label whab-label-time">Local Time:</dt>
+    <dd class="whab-time">12:34 <span class="whab-timezone-name">...</span></dd>
+</dl>
+```
+
+### Shortcode 
+
+You can also generate this HTML anywhere in your theme by using the shortcode:
+
+`[whereabouts user="2" link_location="1" time_format="H:i" show_tz="1"]`
+
+You need to enter a valid user id and the specified user must have saved his/her location for the widget to be displayed.
 
 * * *
 
