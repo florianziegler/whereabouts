@@ -48,7 +48,7 @@ function whereabouts_load_menu_page() {
             		echo '<span class="role"><input type="checkbox" id="' . $role_value . '" name="whab_settings[allowed_user_roles][' . $role_value . ']" value="' . $role_value . '"' . $checked . '><label class="after" for="' . $role_value . '">' . $role_name . '</label></span>';
               	}
             }
-            elseif ( $options['allowed_user_roles'] === false ) {
+            elseif ( isset( $options['allowed_user_roles'] ) AND $options['allowed_user_roles'] === false ) {
                 // No roles are checked
                 foreach ($roles as $role_value => $role_name) {
             		echo '<span class="role"><input type="checkbox" id="' . $role_value . '" name="whab_settings[allowed_user_roles][' . $role_value . ']" value="' . $role_value . '"><label class="after" for="' . $role_value . '">' . $role_name . '</label></span>';
