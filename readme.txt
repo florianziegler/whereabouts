@@ -80,7 +80,7 @@ You need to enter a valid user id and the specified user must have saved his/her
 
 = Upgrade from version 0.3.0 =
 
-When you upgrade from 0.3.0 to a newer version, you have to (re) add the Whereabouts widget.
+When you upgrade from 0.3.0 to a newer version, you have to (re) enter you location and (re) add the Whereabouts widget.
 
 Go to "Appearance > Widgets" and drag the Whereabouts widget to the sidebar of your choosing.
 

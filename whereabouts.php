@@ -107,31 +107,4 @@ function uninstall_whereabouts() {
     delete_option( 'whab_location_data' );
     unregister_widget( 'Whereabouts_Widget' );
 }
-
-
-/**
- * Update: Move location data into user meta
- *
- * @since 0.4.0
- */
-
-function whereabouts_post_upgrade() {
-
-    // Check if location is stored in settings.
-    // If so: move it to current user data.
-    $old_location = get_option( 'whab_location_data' );
-    
-    $current_user = wp_get_current_user();
-    if ( ! ( $current_user instanceof WP_User ) ) { return; }
-    $user_location = get_user_meta( $current_user->ID, 'whab_location_data', true );
-    
-    if ( $user_location AND ! empty( $user_location ) ) {
-        // Do nothing...
-    }
-    else {
-        add_user_meta( $current_user->ID, 'whab_location_data', $old_location, true );
-        delete_option( 'whab_location_data' );
-    }
-}
-
-add_action( 'upgrader_process_complete', 'whereabouts_post_upgrade' );
+?>

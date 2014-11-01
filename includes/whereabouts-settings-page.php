@@ -240,4 +240,6 @@ function whereabouts_validate_google_api_key() { ?>
         });
     </script>
 
-<?php } ?>
+<?php 
+}
+?>
