@@ -196,7 +196,7 @@ function whereabouts_action_javascript() {
     $settings = get_option( 'whab_settings' );
 
     $current_user = wp_get_current_user();
-    if ( !( $current_user instanceof WP_User ) ) { return; }
+    if ( ! ( $current_user instanceof WP_User ) ) { return; }
     $options = get_user_meta( $current_user->ID, 'whab_location_data', true );
     
     // Load language form the settings, use english if not set
@@ -266,15 +266,6 @@ function whereabouts_action_javascript() {
 
                         // Put the geo value into the hidden options field
                         $( '#whab-geo' ).val ( geo['lat'] + ', ' + geo['lng'] );
-                    
-                        // WordCamp Europe 2014 "easter egg"
-                        <?php if( strtotime( '2014-09-29' ) > strtotime( 'now' ) ) { ?>
-                        if ( geo['lat'] == '42.6977082' && geo['lng'] == '23.3218675' ) {
-                            $( '#whereabouts-dashboard-widget' ).find( '.inside' ).append( '<div class="whab-wceu"><?php echo __( 'While you are here:<br /><strong>Visit <a href="http://2014.europe.wordcamp.org/">WordCamp Europe</a> on September 27th - 29th 2014.', 'whereabouts' ); ?></strong></div>' );
-                        } else {
-                            $( '.whab-wceu' ).remove();
-                        }
-                        <?php } ?>
 
                         // Now that the first time worked like a charm, let's ask Google a second time...
                         // Construct the url first

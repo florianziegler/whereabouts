@@ -28,7 +28,7 @@ function whereabouts_register_settings() {
 
 function whereabouts_validate_save_location( $args ) {
 
-    if( ! isset( $args['location_name'] ) OR empty( $args['location_name'] ) ) {
+    if ( ! isset( $args['location_name'] ) OR empty( $args['location_name'] ) ) {
         // Add settings error if location field is empty
         $error = __( 'Please enter a location.', 'whereabouts' );
     } else {
@@ -36,16 +36,16 @@ function whereabouts_validate_save_location( $args ) {
         $args['location_name'] = sanitize_text_field( $args['location_name'] );
     }
 
-    // Sanitize time zone name before saving    
+    // Sanitize time difference before saving    
     $args['utc_difference'] = htmlentities( $args['utc_difference'], ENT_NOQUOTES, 'UTF-8' );
 
     // Sanitize time zone name before saving
     $args['timezone_name'] = sanitize_text_field( $args['timezone_name'] );
     
-    // Sanitize geo before saving
+    // Sanitize geo data before saving
     $args['geo'] = sanitize_text_field( $args['geo'] );
 
-    // If there was no error,  save location info to the user meta and display a message
+    // If there was no error, save location info to the user meta and display a message
     if ( ! isset( $error ) ) {
 
         // Get current user id

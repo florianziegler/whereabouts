@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Whereabouts v0.5.0\n"
+"Project-Id-Version: Whereabouts v0.5.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-11-01 12:21:20+0000\n"
+"PO-Revision-Date: 2014-11-04 17:12:00+0000\n"
 "Last-Translator: Florian Ziegler <mail@florianziegler.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,78 +20,73 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: includes/whereabouts-dashboard.php:82
+#: includes/whereabouts-dashboard.php:81
 #@ whereabouts
 msgid "Go to settings"
 msgstr "Zu den Einstellungen"
 
-#: includes/whereabouts-dashboard.php:82
+#: includes/whereabouts-dashboard.php:81
 #@ whereabouts
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: includes/whereabouts-dashboard.php:86
+#: includes/whereabouts-dashboard.php:85
 #@ whereabouts
 msgid "Activate automatic time zone setting via Google in the <a href=\"options-general.php?page=whereabouts\">settings</a>. As a bonus, you will also see a map of your current location."
 msgstr "Aktiviere das automatische Einstellen der Zeitzone  via Google in den <a href=\"options-general.php?page=whereabouts\">Einstellungen</a>. Dein derzeitiger Aufenthaltsort wird dann außerdem auf einer Karte angezeigt."
 
-#: includes/whereabouts-dashboard.php:90
+#: includes/whereabouts-dashboard.php:89
 #@ whereabouts
 msgid "Enter your current location"
 msgstr "Gib deinen derzeitigen Aufenthaltsort ein"
 
-#: includes/whereabouts-dashboard.php:95
+#: includes/whereabouts-dashboard.php:94
 #@ whereabouts
 msgid "Get location data"
 msgstr "Ortsbezogene Daten abfragen"
 
-#: includes/whereabouts-dashboard.php:99
+#: includes/whereabouts-dashboard.php:98
 #@ whereabouts
 msgid "Use Location name"
 msgstr "Ortsnamen verwenden"
 
-#: includes/whereabouts-dashboard.php:99
+#: includes/whereabouts-dashboard.php:98
 #@ whereabouts
 msgid "Use Location Name"
 msgstr "Ortsnamen verwenden"
 
-#: includes/whereabouts-dashboard.php:102
+#: includes/whereabouts-dashboard.php:101
 #@ whereabouts
 msgid "<p class=\"whab-language-settings-hint\"><strong>Tip:</strong> You can set the language in which Google returns this information in the <a href=\"options-general.php?page=whereabouts\">settings</a>.</a>"
 msgstr "<p class=\"whab-language-settings-hint\"><strong>Tipp:</strong> Du kannst die Sprache, in der Google diese Informationen ausgibt, in den <a href=\"options-general.php?page=whereabouts\">Einstellungen</a> festlegen.</a>"
 
-#: includes/whereabouts-dashboard.php:110
+#: includes/whereabouts-dashboard.php:109
 #@ whereabouts
 msgid "Timezone"
 msgstr "Zeitzone"
 
-#: includes/whereabouts-dashboard.php:171
+#: includes/whereabouts-dashboard.php:170
 #@ whereabouts
 msgid "Timezone Name"
 msgstr "Zeitzonenname"
 
-#: includes/whereabouts-dashboard.php:177
+#: includes/whereabouts-dashboard.php:176
 #@ whereabouts
 msgid "Save Location"
 msgstr "Ort speichern"
 
-#: includes/whereabouts-dashboard.php:274
-#@ whereabouts
-msgid "While you are here:<br /><strong>Visit <a href=\"http://2014.europe.wordcamp.org/\">WordCamp Europe</a> on September 27th - 29th 2014."
-msgstr "Wenn du sowieso schon hier bist:<br /><strong>Komm zum <a href=\"http://2014.europe.wordcamp.org/\">WordCamp Europe</a> vom 27. bis zum 29. September 2014."
-
-#: includes/whereabouts-dashboard.php:308
+#: includes/whereabouts-dashboard.php:298
 #@ whereabouts
 msgid "Google couldn&#x27;t asign a timezone to the location you entered. You need to enter it yourself or try another location."
 msgstr "Google konnte dem eingegeben Ort keine Zeitzone zuweisen. Entweder du legst diese selbst fest oder du probierst einen anderen Ort."
 
-#: includes/whereabouts-dashboard.php:315
-#: includes/whereabouts-dashboard.php:327
+#: includes/whereabouts-dashboard.php:305
+#: includes/whereabouts-dashboard.php:317
 #@ whereabouts
 msgid "Error. The Google API could not be reached."
 msgstr "Fehler. Die Verbindung zur Google API ist fehlgeschlagen."
 
-#: includes/whereabouts-dashboard.php:320
+#: includes/whereabouts-dashboard.php:310
 #@ whereabouts
 msgid "Google couldn&#x27;t find the location you entered."
 msgstr "Google konnte den angegebenen Ort nicht finden."

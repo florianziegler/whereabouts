@@ -3,7 +3,7 @@ Contributors: florianziegler
 Tags: location, timezone, travel, digitalnomad, nomad, dashboard, widget, user, users, usermeta, meta, shortcode
 Requires at least: 3.9
 Tested up to: 4.0
-Stable tag: 0.5.0
+Stable tag: 0.5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,40 @@ You can also generate this HTML code anywhere in your theme by using this shortc
 
 You need to enter a valid user id and the specified user must have saved his/her location for the widget to be displayed.
 
+= Filter =
+
+There is a filter available to change the html output of the widget/shortcode:
+
+**whab_widget_output**
+
+Three argument variables are availabe:
+
+- `$output` The html Whereabouts generates by default as a string
+- `$args` The widget settings as an array
+- `$location` The location values as an array
+
+You could use it in your theme's `functions.php` like this:
+
+`
+add_filter( 'whab_widget_output', 'my_function_to_change_location_widget', 10, 3 );
+
+function my_function_to_change_location_widget( $output, $args, $location ) {
+
+    $output = '<p class="my-location">' . $location['location_name'] . ', ';
+    
+    $output .= date( $args['time_format'], time() + $location['utc_difference'] );
+    if ( $args['show_tz'] ) {
+        $output .= ' (' . $location['timezone_name'] . ')';
+    }
+    return $output . '</p>';
+}
+`
+
+This will change the html output to:
+
+`<p class="my-location">Paris, France, 12:34 (Central European Standard Time)</p>`
+
+
 == Frequently Asked Questions ==
 
 = Upgrade from version 0.3.0 =
@@ -87,6 +121,7 @@ Go to "Appearance > Widgets" and drag the Whereabouts widget to the sidebar of y
 From version 0.4.0 (or newer) the location is saved _per user_. You can choose the user, whose location you want to display, in the widget's options.
 
 
+
 == Screenshots ==
 
 1. Use the Whereabouts dashboard widget to enter your location. If activated, Google will fill out the time zone information for you.
@@ -94,6 +129,9 @@ From version 0.4.0 (or newer) the location is saved _per user_. You can choose t
 
 
 == Changelog ==
+
+= 0.5.5 = 
+* Added a filter function, which you can use to change the widget's html output to your heart's content.
 
 = 0.5.0 =
 

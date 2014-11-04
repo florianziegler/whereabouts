@@ -37,7 +37,7 @@ function whereabouts_display_location( $args ) {
         $output .= $location['location_name'];
         if ( $args['link_location'] == true ) {    
             $output .= '</a>';
-         }
+        }
         $output .= '</dd>
                      <dt class="whab-label whab-label-time">' . __( 'Local Time:', 'whereabouts' ) . '</dt>';
 
@@ -57,7 +57,11 @@ function whereabouts_display_location( $args ) {
 
         $output .= '</dd></dl>';
 
+        // Add filter for widget output, give the dev all he/she needs to completely (re)build the widget
+        $output = apply_filters( 'whab_widget_output', $output, $args, $location );
+
         return $output;
+
     }
     else {
         // User either doesn't exist or has no location info
