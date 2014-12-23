@@ -2,7 +2,7 @@
 Contributors: florianziegler
 Tags: location, timezone, travel, digitalnomad, nomad, dashboard, widget, user, users, usermeta, meta, shortcode
 Requires at least: 3.9
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: 0.5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -130,7 +130,8 @@ From version 0.4.0 (or newer) the location is saved _per user_. You can choose t
 
 == Changelog ==
 
-= 0.5.5 = 
+= 0.5.5 =
+ 
 * Added a filter function, which you can use to change the widget's html output to your heart's content.
 
 = 0.5.0 =
