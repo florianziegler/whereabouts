@@ -19,23 +19,27 @@ function whereabouts_display_location( $args ) {
         $args['time_format'] = 'H:i';
     }
 
-    // Check if user exists...
-    $user_exists = get_user_by( 'id', $args['user'] );
+    $user_exists = false;
 
-    // ...and has location data.
-    $location = get_user_meta( $args['user'], 'whab_location_data', true );
+    if ( isset ( $args['user'] ) ) {
+        // Check if user exists...
+        $user_exists = get_user_by( 'id', $args['user'] );
 
-    if ( $user_exists AND ! empty( $location) ) {
+        // ...and has location data.
+        $location = get_user_meta( $args['user'], 'whab_location_data', true );
+    }
+
+    if ( $user_exists AND ! empty( $location ) ) {
 
         $output = '<dl class="whab-info">
                      <dt class="whab-label whab-label-location">' . __( 'Current Location:', 'whereabouts' ) . '</dt>
                      <dd class="whab-location">';
                  
-        if ( $args['link_location'] == true ) {
+        if ( isset( $args['link_location'] ) AND $args['link_location'] == true ) {
             $output .= '<a title="Show location on Google Maps" href="https://www.google.co.uk/maps/place/' . str_replace( ' ', '', $location['location_name'] ) . '">';
         }
         $output .= $location['location_name'];
-        if ( $args['link_location'] == true ) {    
+        if ( isset( $args['link_location'] ) AND $args['link_location'] == true ) {    
             $output .= '</a>';
         }
         $output .= '</dd>
@@ -50,8 +54,8 @@ function whereabouts_display_location( $args ) {
         $current_time = date( $args['time_format'], $current_time + $offset );
 
         $output .= $current_time;
-
-        if ( $args['show_tz'] == true AND !empty( $timezone_name ) ) {
+ 
+        if ( isset( $args['show_tz'] ) AND $args['show_tz'] == true AND !empty( $timezone_name ) ) {
             $output .= ' <span class="whab-timezone-name"> (' . $timezone_name . ')</span>';
         }
 

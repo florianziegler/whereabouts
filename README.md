@@ -120,6 +120,11 @@ This will change the html output to:
 
 ## Changelog
 
+
+### 0.5.6
+
+* Bugfix
+
 ### 0.5.5
 
 * Added a filter function, which you can use to change the widget's html output to your heart's content.
