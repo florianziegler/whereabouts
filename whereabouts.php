@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) OR exit;
 Plugin Name: Whereabouts
 Plugin URI: http://florianziegler.de/whereabouts
 Description: Show visitors your current location in the world and the corresponding time (zone). Enable Google API support in the <a href="options-general.php?page=whereabouts">Settings</a>.
-Version: 0.5.6
+Version: 0.6.0
 Author: Florian Ziegler
 Author URI: http://florianziegler.de/
 License: GPLv2 or later
@@ -27,22 +27,22 @@ if ( ! function_exists( 'whereabouts_setup' ) ) {
 
 		// Define include path for this plugin
 		define( 'WHEREABOUTS_PATH', plugin_dir_path( __FILE__ ) );
-        
+
 		// Define url for this plugin
 		define( 'WHEREABOUTS_URL', plugin_dir_url( __FILE__ ) );
 
 		// Custom menu page
 		require WHEREABOUTS_PATH . 'includes/whereabouts-settings.php';
-        
+
 		// Include function to load the custom menu page
 		require WHEREABOUTS_PATH . 'includes/whereabouts-settings-page.php';
 
 		// Include function to display Whereabouts as a widget on the Dashboard
 		require WHEREABOUTS_PATH . 'includes/whereabouts-dashboard.php';
-        
+
 		// Include function to display Whereabouts as a widget on the Dashboard
 		require WHEREABOUTS_PATH . 'includes/whereabouts-widget.php';
-        
+
 		// Include function to display Whereabouts on the site
 		require WHEREABOUTS_PATH . 'includes/whereabouts-display.php';
 
@@ -68,8 +68,8 @@ load_plugin_textdomain( 'whereabouts', false, basename( dirname( __FILE__ ) ) . 
 
 function whereabouts_init() {
 	if ( is_admin() ) {
-        wp_enqueue_style( 'whereabouts-admin', WHEREABOUTS_URL . '/css/whereabouts-admin.css', array( 'dashicons') );           
-    }
+		wp_enqueue_style( 'whereabouts-admin', WHEREABOUTS_URL . '/css/whereabouts-admin.css', array( 'dashicons'), '0.6' );
+	}
 }
 add_action( 'init', 'whereabouts_init' );
 
@@ -107,4 +107,3 @@ function uninstall_whereabouts() {
     delete_option( 'whab_location_data' );
     unregister_widget( 'Whereabouts_Widget' );
 }
-?>

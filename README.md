@@ -19,7 +19,11 @@ You can - of course - add multiple widgets to show more than one user/location.
 Each user can comfortably set her/his current location directly on the WordPress dashboard.
 
 ### A little help from Google
-Activate the use of the Google Geocoding and Timezone API in the settings: The Plugin will then set the time zone of your whereabouts automatically, when entering a new location.
+Activate the use of the Google Geocoding and Timezone API in the settings:
+
+You can then use the browser's geolocation API to determine your location, and the Plugin will automatically fetch the time zone of your whereabouts.
+
+Want to use another location? Just type in a location name and the plugin will get all the relevant information for you.
 
 You can also set the language in which the results of the api requests are returned.
 
@@ -120,6 +124,9 @@ This will change the html output to:
 
 ## Changelog
 
+### 0.6.0
+
+* You can now use the browser's geolocation API to set your current location.
 
 ### 0.5.6
 

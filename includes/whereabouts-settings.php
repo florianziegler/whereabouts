@@ -41,7 +41,7 @@ function whereabouts_validate_save_location( $args ) {
 
     // Sanitize time zone name before saving
     $args['timezone_name'] = sanitize_text_field( $args['timezone_name'] );
-    
+
     // Sanitize geo data before saving
     $args['geo'] = sanitize_text_field( $args['geo'] );
 
@@ -65,7 +65,7 @@ function whereabouts_validate_save_location( $args ) {
         else {
             add_user_meta( $current_user->ID, 'whab_location_data', $args, true );
         }
-        
+
         // Tell the user, that it worked!
         echo '<div class="whab-message whab-success">' . __( 'Location saved.', 'whereabouts') . '</div>';
     }
@@ -102,19 +102,19 @@ function whereabouts_settings_validate( $args ) {
     else {
         $args['allowed_user_roles'] = false;
     }
-    
+
     // use-google can either be true or false... make sure it is either one of them
     if ( ! empty( $args['use_google'] ) ) {
         if ( $args['use_google'] != true ) {
             $args['use_google'] = false;
         }
     }
-    
+
     // Check if the chosen language is allowed...
     if ( ! empty( $args['language'] ) ) {
-        
+
         $allowed_languages = array( 'ar', 'eu', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'en-AU', 'en-GB', 'es', 'eu', 'fa', 'fi', 'fil', 'fr', 'gl', 'gu', 'hi', 'hr', 'hu', 'id', 'it', 'iw', 'ja', 'kn', 'ko', 'lt', 'lv', 'ml', 'mr', 'nl', 'nn', 'no', 'or', 'pl', 'pt', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'sk', 'sl', 'sr', 'sv', 'tl', 'ta', 'te', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW' );
-        
+
         if ( ! in_array( $args['language'] , $allowed_languages ) ) {
             add_settings_error( 'language', 'whab-language', __( 'This language is not supported.', 'whereabouts' ), $type = 'error' );
             $args['language'] = '';
@@ -138,4 +138,3 @@ function whereabouts_settings_validate( $args ) {
     return $args;
 
 }
-?>

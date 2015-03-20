@@ -81,5 +81,3 @@ function whereabouts_display_location( $args ) {
  */
 
 add_shortcode( 'whereabouts', 'whereabouts_display_location' );
-
-?>

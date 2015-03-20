@@ -29,7 +29,7 @@ $break: 782px;
  */
 
 #whereabouts-dashboard-widget {
-    
+
     .whab-settings {
         position: absolute;
         top: -42px;
@@ -46,65 +46,98 @@ $break: 782px;
             font-size: 18px;
             line-height: 1;
         }
+
         span {
             @include visually-hidden
         }
     }
-    
+
     .whab-message {
         margin: 0 0 10px 0;
         padding: 10px 15px;
         background-color: #f5f5f5;
     }
-    
+
     #whab-map {
         margin-bottom: 20px;
         height: 200px;
-    }
-    
-    .whab-location-input-wrapper {
-        position: relative;
     }
 
     label {
         margin-bottom: 2px;
         display: block;
     }
-    
+
     p {
         @include clear-after;
         position: relative;
         margin: 0 0 12px 0;
-    }
-    p.whab-col-25 {
-        float: left;
-        width: 25%;
-        
-        select {
-            width: 100%;
+
+        &.whab-col-25 {
+            float: left;
+            width: 25%;
+
+            select {
+                width: 100%;
+            }
+        }
+
+        &.whab-col-75 {
+            float: left;
+            padding-left: 2%;
+            width: 73%;
+            input {
+                width: 100%;
+            }
         }
     }
-    p.whab-col-75 {
-        float: left;
-        padding-left: 2%;
-        width: 73%;
-        input {
-            width: 100%;
-        }
+
+    .whab-location-name-wrap {
+        position: relative;
+        clear: both;
+        display: block;
     }
-    
+
     #whab-location-name {
         width: 99%;
         height: 36px;
         padding-right: 130px;
-        
+
         @media only screen and (min-width: $break) {
             height: 27px;
         }
     }
+
+    .whab-button-box {
+        position: relative;
+    }
+
+    #whab-geolocation-button {
+        position: absolute;
+        bottom: 182px;
+        left: 7px;
+        width: 30px;
+        height: 30px;
+        background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(245,245,245,1) 100%);
+        box-shadow: 0 0 2px transparentize( black, 0.75);
+        border-radius: 50%;
+        text-indent: -1000em;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            background: url(../images/map-marker-active.svg) no-repeat center center;
+            background-size: 13px 18px;
+        }
+    }
+
     #whab-get-location-data {
         position: absolute;
-        top: 22px;
+        top: 1px;
         right: 0px;
         padding-top: 0;
         padding-bottom: 1px;
@@ -113,13 +146,13 @@ $break: 782px;
         line-height: 1;
         border-radius: 0 3px 3px 0;
         box-shadow: none;
-        
 
         @media only screen and (min-width: $break) {
             padding-top: 1px;
             height: 27px;
         }
     }
+
     #timezone_name {
         height: 36px;
 
@@ -131,27 +164,87 @@ $break: 782px;
     .whab-location-box {
         display: none;
         position: relative;
-        margin: -2px 0 10px 0;
-        padding: 15px 20px;
+        margin: -2px 0 15px 0;
         background-color: #f5f5f5;
         border-radius: 3px;
+        @include clear-after;
 
         &:before {
             content: '';
             position: absolute;
             top: -20px;
-            left: 20px;
+            left: 50%;
+            margin-left: -20px;
             width: 0px;
             height: 0px;
             border: 10px solid transparent;
             border-bottom: 10px solid #f5f5f5;
         }
-    
-        p {
+
+        h3 {
             margin: 0;
-            
+            padding: 0.75rem .75rem 0.6rem;
+            font-size: 0.875em;
+            background: linear-gradient(to bottom, rgba(245,245,245,1) 0%,rgba(238,238,238,1) 100%);
+            border-radius: 3px 3px 0 0;
+            border-bottom: 1px solid transparentize( black, 0.96 );
+        }
+
+        #geolocation-choices {
+            margin: 0;
+
+            li {
+                margin: 0;
+
+                a {
+                    display: block;
+                    padding: 0.5rem 0.5rem 0.5rem 2rem;
+                    background: url(../images/map-marker.svg) no-repeat 0.75rem 0.65rem;
+                    background-size: 10px 14px;
+                    border-bottom: 1px solid transparentize( black, 0.98 );
+
+                    &:hover, &:focus {
+                        box-shadow: inset 4px 0 0 0 currentColor;
+                        transition: box-shadow .2s linear;
+                        text-decoration: underline;
+                    }
+                }
+
+                &:last-child a {
+                    border-bottom: none;
+                }
+            }
+        }
+
+        p {
+
             &.whab-language-settings-hint {
-                margin-top: 10px;
+                clear: both;
+                margin-top: 0px;
+                padding: 0.5rem 0.75rem;
+                font-size: 0.875em;
+                background: linear-gradient(to bottom, rgba(238,238,238,1) 0%,rgba(245,245,245,1) 100%);
+                border-top: 1px solid transparentize( black, 0.96 );
+                border-radius: 0 0 3px 3px;
+            }
+        }
+
+        .whab-loading {
+            display: none;
+            float: left;
+            margin: 0.5rem 0.75rem;
+
+            &:before {
+                content: '';
+                display: block;
+                float: left;
+                background: url(/wp-admin/images/spinner-2x.gif) no-repeat 0 0;
+                background-size: 20px;
+                width: 20px;
+                height: 20px;
+            }
+            span {
+                @include visually-hidden;
             }
         }
 
@@ -163,8 +256,8 @@ $break: 782px;
         #whab-temp-location-name {
             font-weight: bold;
         }
-        
-        #whab-use-location-name {
+
+        #whab-use-location-name, .whab-use-location-name {
             margin: -2px 6px 0 3px;
             transform: rotate( -85deg );
 
@@ -173,14 +266,16 @@ $break: 782px;
             }
         }
     }
+
     .whab-success {
         position: relative;
         margin: -2px 0 10px 0;
         padding: 15px 20px;
         color: darken(#79D525, 30%);
         background-color: lighten(#79D525, 15%);
-        border-radius: 3px;        
-    }    
+        border-radius: 3px;
+    }
+
     .whab-error {
         position: relative;
         margin: -2px 0 10px 0;
@@ -204,12 +299,12 @@ $break: 782px;
             }
         }
     }
+
     .whab-save {
         clear: both;
         padding-top: 5px;
     }
 }
-
 
 /**
  *  Settings form
@@ -220,6 +315,7 @@ $break: 782px;
         margin-bottom: 0;
     }
 }
+
 .whab-settings-form {
     padding-top: 10px;
 
@@ -251,6 +347,7 @@ $break: 782px;
             }
         }
     }
+
     .role {
         display: inline-block;
         white-space: nowrap;
@@ -263,12 +360,13 @@ $break: 782px;
             margin-right: 15px;
         }
     }
-    
+
     input[type="checkbox"] {
         float: left;
         display: inline-block;
         margin-right: 5px;
     }
+
     input[type="text"] {
         float: left;
     }
@@ -281,6 +379,7 @@ $break: 782px;
             height: 27px;
         }
     }
+
     .whab-loading {
         display: none;
         float: left;
@@ -299,6 +398,7 @@ $break: 782px;
             @include visually-hidden;
         }
     }
+
     .whab-valid {
         margin-right: 2px;
         float: left;
@@ -314,6 +414,7 @@ $break: 782px;
             @include visually-hidden;
         }
     }
+
     .whab-invalid {
         margin-right: 2px;
         float: left;
@@ -329,7 +430,6 @@ $break: 782px;
             @include visually-hidden;
         }
     }
-    
 }
 
 .clear {

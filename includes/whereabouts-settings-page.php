@@ -28,7 +28,7 @@ function whereabouts_load_menu_page() {
             // Get all possible user roles
             global $wp_roles;
             if ( ! isset( $wp_roles ) ) {
-            	$wp_roles = new WP_Roles();
+                $wp_roles = new WP_Roles();
             }
             $roles = $wp_roles->get_names();
 
@@ -38,7 +38,7 @@ function whereabouts_load_menu_page() {
                 $allowed_user_roles = $options['allowed_user_roles'];
 
                 // "Check" user roles roles that are allowed
-            	foreach ($roles as $role_value => $role_name) {
+                foreach ($roles as $role_value => $role_name) {
                     if ( in_array( $role_value, $allowed_user_roles ) ) {
                         $checked = ' checked="checked"';
                     }
@@ -242,4 +242,3 @@ function whereabouts_validate_google_api_key() { ?>
 
 <?php 
 }
-?>

@@ -11,8 +11,6 @@ Users can set their current location via the WordPress dashboard. A widget displ
 
 == Description ==
 
-**Please read the FAQ for information about updating from version 0.3.0**
-
 Each user can save his/her current location and the corresponding time (zone). The information is stored as user meta data.
 
 The Whereabouts widget displays the location and time (zone) of a specified user (select user in the widget options).
@@ -23,7 +21,11 @@ You can - of course - add multiple widgets to show more than one user/location.
 Each user can comfortably set her/his current location directly on the WordPress dashboard.
 
 = A little help from Google =
-Activate the use of the Google Geocoding and Timezone API in the settings: The Plugin will then set the time zone of your whereabouts automatically, when entering a new location.
+Activate the use of the Google Geocoding and Timezone API in the settings:
+
+You can then use the browser's geolocation API to determine your location, and the Plugin will automatically fetch the time zone of your whereabouts.
+
+Want to use another location? Just type in a location name and the plugin will get all the relevant information for you.
 
 You can also set the language in which the results of the api requests are returned.
 
@@ -129,6 +131,10 @@ From version 0.4.0 (or newer) the location is saved _per user_. You can choose t
 
 
 == Changelog ==
+
+= 0.6.0 =
+
+* You can now use the browser's geolocation API to set your current location.
 
 = 0.5.6 =
  

@@ -142,4 +142,3 @@ add_action( 'widgets_init', 'whereabouts_register_widgets' );
 function whereabouts_register_widgets() {
 	register_widget( 'Whereabouts_Widget' );
 }
-?>

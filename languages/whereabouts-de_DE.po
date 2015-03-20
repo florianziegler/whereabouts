@@ -1,235 +1,302 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Whereabouts v0.5.5\n"
+"Project-Id-Version: Whereabouts v0.6.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-11-04 17:12:00+0000\n"
+"POT-Creation-Date: 2015-03-20 16:44+0700\n"
+"PO-Revision-Date: 2015-03-20 16:50+0700\n"
 "Last-Translator: Florian Ziegler <mail@florianziegler.de>\n"
 "Language-Team: \n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: CSL v1.x\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: GERMANY\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
-"X-Poedit-Basepath: \n"
-"X-Poedit-Bookmarks: \n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Textdomain-Support: yes"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+"X-Poedit-SearchPathExcluded-1: js\n"
 
-#: includes/whereabouts-dashboard.php:81
-#@ whereabouts
+# @ whereabouts
+#: includes/whereabouts-dashboard.php:78
 msgid "Go to settings"
 msgstr "Zu den Einstellungen"
 
-#: includes/whereabouts-dashboard.php:81
-#@ whereabouts
+# @ whereabouts
+#: includes/whereabouts-dashboard.php:78
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: includes/whereabouts-dashboard.php:85
-#@ whereabouts
-msgid "Activate automatic time zone setting via Google in the <a href=\"options-general.php?page=whereabouts\">settings</a>. As a bonus, you will also see a map of your current location."
-msgstr "Aktiviere das automatische Einstellen der Zeitzone  via Google in den <a href=\"options-general.php?page=whereabouts\">Einstellungen</a>. Dein derzeitiger Aufenthaltsort wird dann außerdem auf einer Karte angezeigt."
+#: includes/whereabouts-dashboard.php:86
+msgid "Locate yourself"
+msgstr "Lokalisier dich"
 
-#: includes/whereabouts-dashboard.php:89
-#@ whereabouts
-msgid "Enter your current location"
-msgstr "Gib deinen derzeitigen Aufenthaltsort ein"
+#: includes/whereabouts-dashboard.php:88
+msgid "Let the browser figure out your location"
+msgstr "Lass den Browser deinen Standort bestimmen"
 
-#: includes/whereabouts-dashboard.php:94
-#@ whereabouts
+#: includes/whereabouts-dashboard.php:88
+msgid "or"
+msgstr "oder"
+
+#: includes/whereabouts-dashboard.php:88
+msgid "enter it manually"
+msgstr "tippe selbst"
+
+# @ whereabouts
+#: includes/whereabouts-dashboard.php:91
 msgid "Get location data"
 msgstr "Ortsbezogene Daten abfragen"
 
-#: includes/whereabouts-dashboard.php:98
-#@ whereabouts
-msgid "Use Location name"
-msgstr "Ortsnamen verwenden"
+#: includes/whereabouts-dashboard.php:97
+msgid "Choose Location…"
+msgstr "Standort auswählen…"
 
-#: includes/whereabouts-dashboard.php:98
-#@ whereabouts
-msgid "Use Location Name"
-msgstr "Ortsnamen verwenden"
-
-#: includes/whereabouts-dashboard.php:101
-#@ whereabouts
-msgid "<p class=\"whab-language-settings-hint\"><strong>Tip:</strong> You can set the language in which Google returns this information in the <a href=\"options-general.php?page=whereabouts\">settings</a>.</a>"
-msgstr "<p class=\"whab-language-settings-hint\"><strong>Tipp:</strong> Du kannst die Sprache, in der Google diese Informationen ausgibt, in den <a href=\"options-general.php?page=whereabouts\">Einstellungen</a> festlegen.</a>"
+# @ whereabouts
+#: includes/whereabouts-dashboard.php:102
+msgid ""
+"<p class=\"whab-language-settings-hint\"><strong>Tip:</strong> You can set "
+"the language in which Google returns this information in the <a href="
+"\"options-general.php?page=whereabouts\">settings</a>.</a>"
+msgstr ""
+"<p class=\"whab-language-settings-hint\"><strong>Tipp:</strong> Du kannst "
+"die Sprache, in der Google diese Informationen ausgibt, in den <a href="
+"\"options-general.php?page=whereabouts\">Einstellungen</a> festlegen.</a>"
 
 #: includes/whereabouts-dashboard.php:109
-#@ whereabouts
+msgid ""
+"Activate the use of the Google Maps API in the <a href=\"options-general.php?"
+"page=whereabouts\">settings</a>. You will then be able to automatically set "
+"your current location and time zone. And you get a map!"
+msgstr ""
+"Aktiviere die Verwendung der Google Maps API in den <a href=\"options-"
+"general.php?page=whereabouts\">Einstellungen</a>. Du kannst Standort und "
+"Zeitzone dann automatisch einstellen. Und du bekommst eine Karte!"
+
+# @ whereabouts
+#: includes/whereabouts-dashboard.php:113
+msgid "Enter your current location"
+msgstr "Gib deinen derzeitigen Aufenthaltsort ein"
+
+# @ whereabouts
+#: includes/whereabouts-dashboard.php:121
 msgid "Timezone"
 msgstr "Zeitzone"
 
-#: includes/whereabouts-dashboard.php:170
-#@ whereabouts
+# @ whereabouts
+#: includes/whereabouts-dashboard.php:182
 msgid "Timezone Name"
 msgstr "Zeitzonenname"
 
-#: includes/whereabouts-dashboard.php:176
-#@ whereabouts
+# @ whereabouts
+#: includes/whereabouts-dashboard.php:188
 msgid "Save Location"
 msgstr "Ort speichern"
 
-#: includes/whereabouts-dashboard.php:298
-#@ whereabouts
-msgid "Google couldn&#x27;t asign a timezone to the location you entered. You need to enter it yourself or try another location."
-msgstr "Google konnte dem eingegeben Ort keine Zeitzone zuweisen. Entweder du legst diese selbst fest oder du probierst einen anderen Ort."
-
-#: includes/whereabouts-dashboard.php:305
-#: includes/whereabouts-dashboard.php:317
-#@ whereabouts
-msgid "Error. The Google API could not be reached."
-msgstr "Fehler. Die Verbindung zur Google API ist fehlgeschlagen."
-
-#: includes/whereabouts-dashboard.php:310
-#@ whereabouts
+# @ whereabouts
+#: includes/whereabouts-dashboard.php:359
 msgid "Google couldn&#x27;t find the location you entered."
 msgstr "Google konnte den angegebenen Ort nicht finden."
 
-#: includes/whereabouts-display.php:31
-#@ whereabouts
+# @ whereabouts
+#: includes/whereabouts-dashboard.php:366
+#: includes/whereabouts-dashboard.php:439
+msgid "Error. The Google API could not be reached."
+msgstr "Fehler. Die Verbindung zur Google API ist fehlgeschlagen."
+
+# @ whereabouts
+#: includes/whereabouts-dashboard.php:432
+msgid ""
+"Google couldn&#x27;t asign a timezone to the location you entered. You need "
+"to enter it yourself or try another location."
+msgstr ""
+"Google konnte dem eingegeben Ort keine Zeitzone zuweisen. Entweder du legst "
+"diese selbst fest oder du probierst einen anderen Ort."
+
+# @ whereabouts
+#: includes/whereabouts-display.php:35
 msgid "Current Location:"
 msgstr "Derzeitiger Aufenthaltsort:"
 
-#: includes/whereabouts-display.php:42
-#@ whereabouts
+# @ whereabouts
+#: includes/whereabouts-display.php:46
 msgid "Local Time:"
 msgstr "Ortszeit:"
 
+# @ whereabouts
 #: includes/whereabouts-settings-page.php:18
-#@ whereabouts
 msgid "Whereabouts Settings"
 msgstr "Whereabouts Einstellungen"
 
-#: includes/whereabouts-settings-page.php:69
-#@ whereabouts
-msgid "Use Google to get location data"
-msgstr "Google verwenden um Standortdaten abzufragen"
-
-#: includes/whereabouts-settings-page.php:72
-#@ whereabouts
-msgid "Set the language in which Google returns the result of your location request"
-msgstr "Sprache festlegen, in der Google das Ergebnis der Ortsanfrage ausgibt"
-
-#: includes/whereabouts-settings-page.php:73
-#@ whereabouts
-msgid "API Request Language"
-msgstr "Sprache der API Abfrage"
-
-#: includes/whereabouts-settings-page.php:82
-#@ whereabouts
-msgid "Select Language"
-msgstr "Sprache wählen"
-
-#: includes/whereabouts-settings-page.php:152
-#@ whereabouts
-msgid "In order to use your Google API Key, you must enable the <strong>Geocoding</strong> and <strong>Time Zone</strong> APIs in the <a href=\"https://developers.google.com/console/\">Google Developer Console</a>. The plugin will send a test request to the api to validate your key."
-msgstr "Um deinen Google API Schlüssel zu verwenden, muss dieser für die Verwendung der <strong>Geocoding</strong> und <strong>Time Zone</strong> API in der <a href=\"https://developers.google.com/console/\">Google Developer Console</a> freigegeben sein. Das Plugin sendet eine Testanfrage an die API, um den angegebenen Schlüssel zu bestätigen."
-
-#: includes/whereabouts-settings-page.php:153
-#@ whereabouts
-msgid "Google API Key"
-msgstr "Google API Schlüssel"
-
-#: includes/whereabouts-settings-page.php:153
-#@ whereabouts
-msgid "optional"
-msgstr "optional"
-
-#: includes/whereabouts-settings-page.php:156
-#@ whereabouts
-msgid "Save Settings"
-msgstr "Einstellungen speichern"
-
-#: includes/whereabouts-settings.php:119
-#@ whereabouts
-msgid "This language is not supported."
-msgstr "Diese Sprache wird nicht unterstützt."
-
-#: includes/whereabouts-widget.php:22
-#@ whereabouts
-msgid "Shows current location and timezone."
-msgstr "Zeigt derzeitigen Aufenthaltsort und Zeitzone an."
-
-#: includes/whereabouts-widget.php:100
-#@ whereabouts
-msgid "Title:"
-msgstr "Titel:"
-
-#: includes/whereabouts-widget.php:117
-#@ whereabouts
-msgid "Link location to Google Maps"
-msgstr "Aufenthaltsort mit Google Maps verlinken"
-
-#: includes/whereabouts-widget.php:121
-#@ whereabouts
-msgid "Show time zone name"
-msgstr "Zeitzonenname anzeigen"
-
-#: includes/whereabouts-settings-page.php:153
-#@ whereabouts
-msgid "Validate API Key"
-msgstr "API Schlüssel validieren"
-
-#: includes/whereabouts-settings-page.php:222
-#@ whereabouts
-msgid "You key is valid."
-msgstr "Dein Schlüssel ist gültig."
-
-#: includes/whereabouts-settings-page.php:226
-#: includes/whereabouts-settings-page.php:232
-#@ whereabouts
-msgid "Your key is not valid."
-msgstr "Dein Schlüssel ist ungültig."
-
-#: includes/whereabouts-settings-page.php:236
-#@ whereabouts
-msgid "Validation server could not be reached. Try again later."
-msgstr "Der Validierungsserver ist nicht erreichbar. Versuche es später noch einmal."
-
-#: includes/whereabouts-settings.php:128
-#@ whereabouts
-msgid "The key you provided is not valid."
-msgstr "Der Schlüssel ist nicht gültig."
-
-#: includes/whereabouts-widget.php:124
-#@ whereabouts
-msgid "Time Format"
-msgstr "Zeitformat"
-
-#: includes/whereabouts-settings-page.php:70
-#@ whereabouts
-msgid "If you check this box, the Whereabouts plugin will send a request to the Google Geocoding API using the content of the location input field in order to retrieve information about the given location. The time zone will be set for you automatically and you have the option to use the official location name provided by Google."
-msgstr "Wenn du diese Option auswählst, sendet das Whereabouts Plugin deine Eingabe an die Google Geocoding API, um weitere Informationen über diesen Ort zu erhalten. Die Zeitzone wird dann automatisch eingestellt und du hast außerdem die Möglichkeit den offiziellen, von Google gefunden Ortsnamen zu übernehmen."
-
-#: includes/whereabouts-settings.php:33
-#@ whereabouts
-msgid "Please enter a location."
-msgstr "Bitte Aufenthaltsort eingeben."
-
-#: includes/whereabouts-settings.php:70
-#@ whereabouts
-msgid "Location saved."
-msgstr "Aufenthaltsort gespeichert."
-
-#: includes/whereabouts-widget.php:105
-#@ whereabouts
-msgid "Show location of this user:"
-msgstr "Den Aufenthaltsort für diesen User anzeigen:"
-
-#: includes/whereabouts-widget.php:95
-#, php-format
-#@ whereabouts
-msgid "This widget won't be displayed until %s saved his/her location."
-msgstr "Dieses Widget wird erst angezeigt, wenn %s einen Aufenthaltsort gespeichert hat."
-
+# @ whereabouts
 #: includes/whereabouts-settings-page.php:24
-#@ whereabouts
 msgid "Select roles that allow users to set their location"
 msgstr "Wähle Rollen aus, die es Usern erlauben, ihren Standort zu speichern"
 
+# @ whereabouts
+#: includes/whereabouts-settings-page.php:69
+msgid "Use Google to get location data"
+msgstr "Google verwenden um Standortdaten abzufragen"
+
+# @ whereabouts
+#: includes/whereabouts-settings-page.php:70
+msgid ""
+"If you check this box, the Whereabouts plugin will send a request to the "
+"Google Geocoding API using the content of the location input field in order "
+"to retrieve information about the given location. The time zone will be set "
+"for you automatically and you have the option to use the official location "
+"name provided by Google."
+msgstr ""
+"Wenn du diese Option auswählst, sendet das Whereabouts Plugin deine Eingabe "
+"an die Google Geocoding API, um weitere Informationen über diesen Ort zu "
+"erhalten. Die Zeitzone wird dann automatisch eingestellt und du hast "
+"außerdem die Möglichkeit den offiziellen, von Google gefunden Ortsnamen zu "
+"übernehmen."
+
+# @ whereabouts
+#: includes/whereabouts-settings-page.php:72
+msgid ""
+"Set the language in which Google returns the result of your location request"
+msgstr "Sprache festlegen, in der Google das Ergebnis der Ortsanfrage ausgibt"
+
+# @ whereabouts
+#: includes/whereabouts-settings-page.php:73
+msgid "API Request Language"
+msgstr "Sprache der API Abfrage"
+
+# @ whereabouts
+#: includes/whereabouts-settings-page.php:82
+msgid "Select Language"
+msgstr "Sprache wählen"
+
+# @ whereabouts
+#: includes/whereabouts-settings-page.php:152
+msgid ""
+"In order to use your Google API Key, you must enable the <strong>Geocoding</"
+"strong> and <strong>Time Zone</strong> APIs in the <a href=\"https://"
+"developers.google.com/console/\">Google Developer Console</a>. The plugin "
+"will send a test request to the api to validate your key."
+msgstr ""
+"Um deinen Google API Schlüssel zu verwenden, muss dieser für die Verwendung "
+"der <strong>Geocoding</strong> und <strong>Time Zone</strong> API in der <a "
+"href=\"https://developers.google.com/console/\">Google Developer Console</a> "
+"freigegeben sein. Das Plugin sendet eine Testanfrage an die API, um den "
+"angegebenen Schlüssel zu bestätigen."
+
+# @ whereabouts
+#: includes/whereabouts-settings-page.php:153
+msgid "Google API Key"
+msgstr "Google API Schlüssel"
+
+# @ whereabouts
+#: includes/whereabouts-settings-page.php:153
+msgid "optional"
+msgstr "optional"
+
+# @ whereabouts
+#: includes/whereabouts-settings-page.php:153
+msgid "Validate API Key"
+msgstr "API Schlüssel validieren"
+
+# @ whereabouts
+#: includes/whereabouts-settings-page.php:156
+msgid "Save Settings"
+msgstr "Einstellungen speichern"
+
+# @ whereabouts
+#: includes/whereabouts-settings-page.php:222
+msgid "You key is valid."
+msgstr "Dein Schlüssel ist gültig."
+
+# @ whereabouts
+#: includes/whereabouts-settings-page.php:226
+#: includes/whereabouts-settings-page.php:232
+msgid "Your key is not valid."
+msgstr "Dein Schlüssel ist ungültig."
+
+# @ whereabouts
+#: includes/whereabouts-settings-page.php:236
+msgid "Validation server could not be reached. Try again later."
+msgstr ""
+"Der Validierungsserver ist nicht erreichbar. Versuche es später noch einmal."
+
+# @ whereabouts
+#: includes/whereabouts-settings.php:33
+msgid "Please enter a location."
+msgstr "Bitte Aufenthaltsort eingeben."
+
+# @ whereabouts
+#: includes/whereabouts-settings.php:70
+msgid "Location saved."
+msgstr "Aufenthaltsort gespeichert."
+
+# @ whereabouts
+#: includes/whereabouts-settings.php:119
+msgid "This language is not supported."
+msgstr "Diese Sprache wird nicht unterstützt."
+
+# @ whereabouts
+#: includes/whereabouts-settings.php:128
+msgid "The key you provided is not valid."
+msgstr "Der Schlüssel ist nicht gültig."
+
+# @ whereabouts
+#: includes/whereabouts-widget.php:22
+msgid "Shows current location and timezone."
+msgstr "Zeigt derzeitigen Aufenthaltsort und Zeitzone an."
+
+# @ whereabouts
+#: includes/whereabouts-widget.php:95
+#, php-format
+msgid "This widget won't be displayed until %s saved his/her location."
+msgstr ""
+"Dieses Widget wird erst angezeigt, wenn %s einen Aufenthaltsort gespeichert "
+"hat."
+
+# @ whereabouts
+#: includes/whereabouts-widget.php:100
+msgid "Title:"
+msgstr "Titel:"
+
+# @ whereabouts
+#: includes/whereabouts-widget.php:105
+msgid "Show location of this user:"
+msgstr "Den Aufenthaltsort für diesen User anzeigen:"
+
+# @ whereabouts
+#: includes/whereabouts-widget.php:117
+msgid "Link location to Google Maps"
+msgstr "Aufenthaltsort mit Google Maps verlinken"
+
+# @ whereabouts
+#: includes/whereabouts-widget.php:121
+msgid "Show time zone name"
+msgstr "Zeitzonenname anzeigen"
+
+# @ whereabouts
+#: includes/whereabouts-widget.php:124
+msgid "Time Format"
+msgstr "Zeitformat"
+
+# @ whereabouts
+#~ msgid ""
+#~ "Activate automatic time zone setting via Google in the <a href=\"options-"
+#~ "general.php?page=whereabouts\">settings</a>. As a bonus, you will also "
+#~ "see a map of your current location."
+#~ msgstr ""
+#~ "Aktiviere das automatische Einstellen der Zeitzone  via Google in den <a "
+#~ "href=\"options-general.php?page=whereabouts\">Einstellungen</a>. Dein "
+#~ "derzeitiger Aufenthaltsort wird dann außerdem auf einer Karte angezeigt."
+
+# @ whereabouts
+#~ msgid "Use Location name"
+#~ msgstr "Ortsnamen verwenden"
+
+# @ whereabouts
+#~ msgid "Use Location Name"
+#~ msgstr "Ortsnamen verwenden"

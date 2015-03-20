@@ -4,21 +4,14 @@ module.exports = function( grunt ) {
 
 		pkg: grunt.file.readJSON( 'package.json' ),
 
-        // uglify: {
-        //     build: {
-        //         src: 'js/whereabouts.js',
-        //         dest: 'js/whereabouts.min.js',
-        //               }
-        // },
-
 		sass: {
 			style: {
 				options: {
-					style: 'expanded',
+					style: 'compressed',
                     sourcemap: 'none'
 				},
 				files: {
-					'css/whereabouts.css': 'scss/whereabouts.scss',
+                    // 'css/whereabouts.css': 'scss/whereabouts.scss',
 					'css/whereabouts-admin.css': 'scss/whereabouts-admin.scss'
 				}
 			}
@@ -30,22 +23,6 @@ module.exports = function( grunt ) {
             },
             style: {
                 src: 'css/*.css'
-            }
-        },
-
-        svgstore: {
-            options: {
-                //prefix: '',
-                cleanup: false,
-                svg: {
-                    class: 'hidden',
-                    style: 'display: none;'
-                }
-            },
-            default: {
-                files: {
-                    'images/shapes.svg': ['svg/*.svg']
-                }
             }
         },
 
