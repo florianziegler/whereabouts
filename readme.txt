@@ -2,8 +2,8 @@
 Contributors: florianziegler
 Tags: location, timezone, travel, digitalnomad, nomad, dashboard, widget, user, users, usermeta, meta, shortcode
 Requires at least: 3.9
-Tested up to: 4.1
-Stable tag: 0.5.6
+Tested up to: 4.1.1
+Stable tag: 0.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,7 +34,7 @@ You can also set the language in which the results of the api requests are retur
 * WordPress 3.9.2
 
 = Support =
-Send a friendly email?
+* [Open a new topic here](https://wordpress.org/support/plugin/whereabouts)
 
 = Website =
 * [Whereabouts](http://florianziegler.de/whereabouts)
@@ -113,6 +113,10 @@ This will change the html output to:
 
 
 == Frequently Asked Questions ==
+
+= Why am I not getting any results when I use my browser's geolocation api? =
+
+Usually it is a privacy issue: Make sure your browser and your website are allowed to use the location functionality of your device (eg. your smartphone). In general these settings are found in your device's privacy or location settings.
 
 = Upgrade from version 0.3.0 =
 

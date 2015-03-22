@@ -299,7 +299,7 @@ function whereabouts_action_javascript() {
 							getTimezoneInfo( url );
 
 						}, function() {
-							handleNoGeolocation( browserSupportFlag );
+							// ...
 						});
 					}
 					// Browser doesn't support Geolocation
