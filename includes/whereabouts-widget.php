@@ -51,7 +51,6 @@ class Whereabouts_Widget extends WP_Widget {
         echo whereabouts_display_location( $input );
         echo $args['after_widget'];
 
-        
 	}
 
 	// Save widget options    

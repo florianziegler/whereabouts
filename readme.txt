@@ -2,7 +2,7 @@
 Contributors: florianziegler
 Tags: location, timezone, travel, digitalnomad, nomad, dashboard, widget, user, users, usermeta, meta, shortcode
 Requires at least: 3.9
-Tested up to: 4.1.1
+Tested up to: 4.4.2
 Stable tag: 0.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -37,11 +37,11 @@ You can also set the language in which the results of the api requests are retur
 * [Open a new topic here](https://wordpress.org/support/plugin/whereabouts)
 
 = Website =
-* [Whereabouts](http://florianziegler.de/whereabouts)
+* [Whereabouts](https://where.abouts.io/)
 * [Github](https://github.com/florianziegler/whereabouts)
 
 = Author =
-* [Website](http://florianziegler.de)
+* [Website](https://florianziegler.de/)
 * [Twitter](https://twitter.com/damndirty)
 
 
