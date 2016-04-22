@@ -15,7 +15,7 @@
 class Whereabouts_Widget extends WP_Widget {
 
     // Instantiate parent object
-	function Whereabouts_Widget() {
+	function __construct() {
 
         $widget_slug = 'whereabouts_user_widget';
 

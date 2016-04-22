@@ -70,7 +70,7 @@ function whereabouts_load_menu_page() {
             <p><?php _e( 'If you check this box, the Whereabouts plugin will send a request to the Google Geocoding API using the content of the location input field in order to retrieve information about the given location. The time zone will be set for you automatically and you have the option to use the official location name provided by Google.', 'whereabouts' ); ?></p>
             <hr />
             <p><?php _e( 'Set the language in which Google returns the result of your location request', 'whereabouts' ); ?>:</p>
-            <p><label for="language"><strong><? _e( 'API Request Language', 'whereabouts'); ?></strong></label>
+            <p><label for="language"><strong><?php _e( 'API Request Language', 'whereabouts'); ?></strong></label>
                 <select name="whab_settings[language]" id="language">
                 <?php
                     if ( isset( $options['language'] ) && $options['language'] != '' ) { $selected = $options['language']; } else { $selected = ''; }
