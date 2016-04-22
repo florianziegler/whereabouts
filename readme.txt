@@ -136,6 +136,11 @@ From version 0.4.0 (or newer) the location is saved _per user_. You can choose t
 
 == Changelog ==
 
+= 0.6.1 =
+
+* Update Google Maps API language selector
+* Fix PHP 7 issues
+
 = 0.6.0 =
 
 * You can now use the browser's geolocation API to set your current location.
