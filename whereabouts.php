@@ -9,7 +9,7 @@ Version: 0.6.1
 Author: Florian Ziegler
 Author URI: http://florianziegler.de/
 License: GPLv2 or later
-Text-Domain: whereabouts
+Text Domain: whereabouts
 */
 
 
