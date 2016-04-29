@@ -423,13 +423,13 @@ function whereabouts_action_javascript() {
 
 						// Set time zone select and time zone name input field
 						temp = offset * 3600;
-						
+
 						$.whab.offset = temp;
 						$.whab.timezone = timezone;
 
 					} else {
 						// Add error message, because Google did not return any time zone information
-						$( '#whereabouts-dashboard-widget' ).find( '.whab-location-box' ).after( '<div class="whab-error location"><?php _e( 'Google couldn&#x27;t asign a timezone to the location you entered. You need to enter it yourself or try another location.', 'whereabouts' ); ?></div>' );      
+						$( '#whereabouts-dashboard-widget' ).find( '.whab-location-box' ).after( '<div class="whab-error location"><?php _e( 'Google couldn&#x27;t assign a timezone to the location you entered. You need to enter it yourself or try another location.', 'whereabouts' ); ?></div>' );
 					}
 				}).done( function() {
 					// ...
