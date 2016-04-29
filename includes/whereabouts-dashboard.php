@@ -445,3 +445,13 @@ function whereabouts_action_javascript() {
 
 <?php
 }
+
+
+
+
+function whereabouts_frontend_location_updater() {
+	whereabouts_build_dashboard_widget();
+	whereabouts_action_javascript();
+}
+
+add_shortcode( 'whereabouts-frontend', 'whereabouts_frontend_location_updater' );

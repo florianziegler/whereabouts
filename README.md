@@ -125,6 +125,11 @@ This will change the html output to:
 
 ## Changelog
 
+### 0.6.1
+
+* Update Google Maps API language selector
+* Fix PHP 7 issues
+
 ### 0.6.0
 
 * You can now use the browser's geolocation API to set your current location.
