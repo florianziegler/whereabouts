@@ -209,14 +209,14 @@ function whereabouts_validate_google_api_key() { ?>
                         $( '#whab-key-validation' ).val( '0' );
 
                         if ( result.status == 'OK' ) {
-                        
+
                             $.get( url2, data, function( result2 ) {
 
-                                if ( result2.status == 'OK' ) {  
+                                if ( result2.status == 'OK' ) {
                                     // Set key validation to true
                                     $( '#whab-key-validation' ).val( '1' );
                                     // Show checkmark
-                                    $( '<span class="whab-valid"><span><?php _e( 'You key is valid.', 'whereabouts' ); ?></span></span>' ).insertAfter( '#google-maps-api-key' );
+                                    $( '<span class="whab-valid"><span><?php _e( 'Your key is valid.', 'whereabouts' ); ?></span></span>' ).insertAfter( '#google-maps-api-key' );
                                 }
                                 else {
                                     // Show x
