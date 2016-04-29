@@ -3,11 +3,11 @@
 defined( 'ABSPATH' ) OR exit;
 /*
 Plugin Name: Whereabouts
-Plugin URI: http://florianziegler.de/whereabouts
+Plugin URI: https://where.abouts.io/
 Description: Show visitors your current location in the world and the corresponding time (zone). Enable Google API support in the <a href="options-general.php?page=whereabouts">Settings</a>.
 Version: 0.6.1
 Author: Florian Ziegler
-Author URI: http://florianziegler.de/
+Author URI: https://florianziegler.de/
 License: GPLv2 or later
 Text Domain: whereabouts
 */
