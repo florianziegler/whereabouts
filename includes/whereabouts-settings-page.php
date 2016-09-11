@@ -8,7 +8,7 @@
 
 /**
  * Content of the settings page
- * 
+ *
  * @since 0.1.0
  */
 
@@ -33,7 +33,7 @@ function whereabouts_load_menu_page() {
             $roles = $wp_roles->get_names();
 
             // Get allowed user roles from the settings
-            if ( isset( $options['allowed_user_roles'] ) && ! empty(  $options['allowed_user_roles'] ) ) { 
+            if ( isset( $options['allowed_user_roles'] ) && ! empty( $options['allowed_user_roles'] ) ) {
                 // Get allowed roles
                 $allowed_user_roles = $options['allowed_user_roles'];
 
@@ -74,7 +74,7 @@ function whereabouts_load_menu_page() {
                 <select name="whab_settings[language]" id="language">
                 <?php
                     if ( isset( $options['language'] ) && $options['language'] != '' ) { $selected = $options['language']; } else { $selected = ''; }
-                    
+
                     // Make select box of all supported languages
                     // https://gist.github.com/florianziegler/77cfd2655542cadc47e3
                     // Source: https://developers.google.com/maps/faq#using-google-maps-apis
@@ -141,7 +141,7 @@ function whereabouts_load_menu_page() {
                         if ( $value == $selected ) { echo ' selected="selected"'; }
                         echo '>' . $key . '</option>';
                     }
-                    
+
                 ?>
                 </select>
             </p>
@@ -154,7 +154,7 @@ function whereabouts_load_menu_page() {
         </form>
     </div>
 
-<?php 
+<?php
     add_action( 'admin_footer', 'whereabouts_validate_google_api_key' );
 }
 
@@ -166,7 +166,7 @@ function whereabouts_load_menu_page() {
  */
 
 function whereabouts_validate_google_api_key() { ?>
-    <script type="text/javascript" >
+    <script type="text/javascript">
         jQuery( document ).ready( function( $ ) {
 
             // Detect if api key gets changed
@@ -237,5 +237,5 @@ function whereabouts_validate_google_api_key() { ?>
         });
     </script>
 
-<?php 
+<?php
 }
