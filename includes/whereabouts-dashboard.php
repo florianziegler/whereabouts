@@ -80,7 +80,7 @@ function whereabouts_build_dashboard_widget() {
 		<?php // If the plugin is set to use Google, insert maps api script,  map canvas, a geolocation button and the geolocation box
 		if ( isset( $settings['use_google'] ) AND $settings['use_google'] == true ) {  ?>
 
-			<script src="//maps.googleapis.com/maps/api/js?v=3.exp&language=<?php echo $language; ?>"></script>
+			<script src="//maps.googleapis.com/maps/api/js?v=3.exp&language=<?php echo $language; ?>&key=<?php echo $settings['google-maps-api-key'] ?>"></script>
 			<div id="whab-map"></div>
 
 			<div class="whab-button-box"><a id="whab-geolocation-button" class="get-browser-geolocation" href="#"><?php _e( 'Locate yourself', 'whereabouts' ); ?></a></div>
@@ -295,7 +295,7 @@ function whereabouts_action_javascript() {
 							});
 
 							// Set timezone
-							url = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + position.coords.latitude + ',' + position.coords.longitude + '&timestamp=<?php echo time(); ?>&language=<?php echo $language; ?>';
+							url = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + position.coords.latitude + ',' + position.coords.longitude + '&timestamp=<?php echo time(); ?>&language=<?php echo $language; ?>&key=<?php echo $settings['google-maps-api-key'] ?>';
 							getTimezoneInfo( url );
 
 						}, function() {
@@ -321,7 +321,7 @@ function whereabouts_action_javascript() {
 				// Better get crankin' and fetch some data from the Google...
 				var whabloc = $( '#whab-location-name' ).val();
 				var data = '';
-				var url = 'https://maps.googleapis.com/maps/api/geocode/json?language=<?php echo $language; ?>&address=' + whabloc;
+				var url = 'https://maps.googleapis.com/maps/api/geocode/json?language=<?php echo $language; ?>&address=' + whabloc + '&key=<?php echo $settings['google-maps-api-key'] ?>';
 
 				// Ajax request, baby!
 				$.get( url, data, function( location_data ) {
@@ -349,7 +349,7 @@ function whereabouts_action_javascript() {
 
 						// Now that the first time worked like a charm, let's ask Google a second time...
 						// Construct the url first
-						url = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + geo['lat'] + ',' + geo['lng'] + '&timestamp=<?php echo time(); ?>&language=<?php echo $language; ?>';
+						url = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + geo['lat'] + ',' + geo['lng'] + '&timestamp=<?php echo time(); ?>&language=<?php echo $language; ?>&key=<?php echo $settings['google-maps-api-key'] ?>';
 
 						// Set timezone
 						getTimezoneInfo( url );
