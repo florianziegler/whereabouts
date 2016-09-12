@@ -32,6 +32,7 @@ You can also set the language in which the results of the api requests are retur
 = Requirements =
 * PHP 5.3
 * WordPress 3.9.2
+* In some modern browsers your website needs to have a working SSL-certificate in order to use the geolocation api.
 
 = Support =
 * [Open a new topic here](https://wordpress.org/support/plugin/whereabouts)
@@ -51,7 +52,7 @@ You can also set the language in which the results of the api requests are retur
 
 2. Activate the "Whereabouts" plugin in the WordPress administration interface.
 
-3. Go to "Settings" -> "Whereabouts" and activate "Use Google to get location data" and set the "API Request Language".
+3. Go to "Settings" -> "Whereabouts" and activate "Use Google to get location data", enter you API key and set the "API Request Language".
 
 4. On the dashboard, set your location.
 
@@ -98,7 +99,7 @@ add_filter( 'whab_widget_output', 'my_function_to_change_location_widget', 10, 3
 function my_function_to_change_location_widget( $output, $args, $location ) {
 
     $output = '<p class="my-location">' . $location['location_name'] . ', ';
-    
+
     $output .= date( $args['time_format'], time() + $location['utc_difference'] );
     if ( $args['show_tz'] ) {
         $output .= ' (' . $location['timezone_name'] . ')';
@@ -136,6 +137,12 @@ From version 0.4.0 (or newer) the location is saved _per user_. You can choose t
 
 == Changelog ==
 
+= 0.7.0 =
+
+* Adapt to changes in Google's APIs
+* Important: You now need a Google API key to use the geolocation feature!
+* Also: In most modern browser your website needs a working SSL-certificate to use the geolocation feature!
+
 = 0.6.1 =
 
 * Update Google Maps API language selector
@@ -146,11 +153,11 @@ From version 0.4.0 (or newer) the location is saved _per user_. You can choose t
 * You can now use the browser's geolocation API to set your current location.
 
 = 0.5.6 =
- 
+
 * Bugfix
 
 = 0.5.5 =
- 
+
 * Added a filter function, which you can use to change the widget's html output to your heart's content.
 
 = 0.5.0 =

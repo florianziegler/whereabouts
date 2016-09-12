@@ -31,6 +31,7 @@ You can also set the language in which the results of the api requests are retur
 ### Requirements
 * PHP 5.3
 * WordPress 3.9.2
+* In some modern browsers your website needs to have a working SSL-certificate in order to use the geolocation api.
 
 * * *
 
@@ -51,7 +52,7 @@ There is **no extra styling** for the widget. You can however do it yourself, in
 </dl>
 ```
 
-### Shortcode 
+### Shortcode
 
 You can also generate this HTML anywhere in your theme by using the shortcode:
 
@@ -74,8 +75,8 @@ The individual locations are stored in the respective user meta data with the ke
     'timezone_name'  => 'Central European Standard Time',
     'geo'            => '48.856614, 2.3522219' // latitude, longitude
 }
-``` 
-   
+```
+
 You can easily access it via the following function:
 
 ```php
@@ -108,7 +109,7 @@ add_filter( 'whab_widget_output', 'my_function_to_change_location_widget', 10, 3
 function my_function_to_change_location_widget( $output, $args, $location ) {
 
     $output = '<p class="my-location">' . $location['location_name'] . ', ';
-    
+
     $output .= date( $args['time_format'], time() + $location['utc_difference'] );
     if ( $args['show_tz'] ) {
         $output .= ' (' . $location['timezone_name'] . ')';
@@ -124,6 +125,12 @@ This will change the html output to:
 * * *
 
 ## Changelog
+
+### 0.7.0
+
+* Adapt to changes in Google's APIs
+* Important: You now need a Google API key to use the geolocation feature!
+* Also: In most modern browser your website needs a working SSL-certificate to use the geolocation feature!
 
 ### 0.6.1
 

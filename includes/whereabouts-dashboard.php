@@ -63,9 +63,9 @@ function whereabouts_build_dashboard_widget() {
 		$settings = get_option( 'whab_settings' );
 
 		// Get language
-		if ( isset( $settings['language'] ) && $settings['language'] != '' ) { 
+		if ( isset( $settings['language'] ) && $settings['language'] != '' ) {
 			$language = $settings['language'];
-		} else { 
+		} else {
 			$language = 'en';
 		}
 
@@ -76,33 +76,47 @@ function whereabouts_build_dashboard_widget() {
 
 		//  Add shortcut to the Whereabouts settings ?>
 		<a class="whab-settings" href="options-general.php?page=whereabouts" title="<?php _e( 'Go to settings', 'whereabouts' ); ?>"><span><?php _e( 'Settings', 'whereabouts' ); ?></span></a>
-		
+
 		<?php // If the plugin is set to use Google, insert maps api script,  map canvas, a geolocation button and the geolocation box
-		if ( isset( $settings['use_google'] ) AND $settings['use_google'] == true ) {  ?>
+		if ( isset( $settings['use_google'] ) AND $settings['use_google'] == true ) {
 
-			<script src="//maps.googleapis.com/maps/api/js?v=3.exp&language=<?php echo $language; ?>"></script>
-			<div id="whab-map"></div>
+			if ( isset( $settings['google-maps-api-key'] ) AND ! empty( $settings['google-maps-api-key'] ) ) {
 
-			<div class="whab-button-box"><a id="whab-geolocation-button" class="get-browser-geolocation" href="#"><?php _e( 'Locate yourself', 'whereabouts' ); ?></a></div>
+				if ( ! is_ssl() ) {
+					echo '<p>' . __( 'Geolocation might not work, <a href="https://where.abouts.io/faq/#geolocation-ssl">because your website is not using SSL</a>.', 'whereabouts' ) . '</p>';
+				}
+				?>
 
-			<p><label for="whab-location-name"><a class="get-browser-geolocation" href="#"><?php _e( "Let the browser figure out your location", "whereabouts" ); ?></a> <?php echo __( 'or', 'whereabouts' ) . ' ' . __( 'enter it manually', 'whereabouts' ); ?>:</label>
-				<span class="whab-location-name-wrap">
-					<input type="text" name="whab_location_data[location_name]" id="whab-location-name" value="<?php if ( isset( $location['location_name'] ) && $location['location_name'] != '' ) { echo $location['location_name']; } else { echo ''; } ?>" />
-					<input type="submit" class="button button-secondary" name="get-location-data" id="whab-get-location-data" value="<?php _e( 'Get location data', 'whereabouts' ); ?>" />
-				</span>
-			</p>
+				<script src="//maps.googleapis.com/maps/api/js?v=3.exp&language=<?php echo $language; ?>&key=<?php echo $settings['google-maps-api-key']; ?>"></script>
+				<div id="whab-map"></div>
 
-			<div class="whab-location-box">
-				<div class="whab-location-info">
-					<h3><?php _e( 'Choose Location…', 'whereabouts' ); ?></h3>
-					<div class="whab-loading"><span>loading</span></div>
-					<ul id="geolocation-choices"></ul>
-					<?php // If not set, diplay a hint, that the request language can be adjusted in the plugin's settings
-					if ( ! isset( $settings['language'] ) OR $settings['language'] == '' ) { 
-						_e( '<p class="whab-language-settings-hint"><strong>Tip:</strong> You can set the language in which Google returns this information in the <a href="options-general.php?page=whereabouts">settings</a>.</a>', 'whereabouts' );
-					} ?>
-				</div>
-			</div><?php
+				<div class="whab-button-box"><a id="whab-geolocation-button" class="get-browser-geolocation" href="#"><?php _e( 'Locate yourself', 'whereabouts' ); ?></a></div>
+
+				<p><label for="whab-location-name"><a class="get-browser-geolocation" href="#"><?php _e( "Let the browser figure out your location", "whereabouts" ); ?></a> <?php echo __( 'or', 'whereabouts' ) . ' ' . __( 'enter it manually', 'whereabouts' ); ?>:</label>
+					<span class="whab-location-name-wrap">
+						<input type="text" name="whab_location_data[location_name]" id="whab-location-name" value="<?php if ( isset( $location['location_name'] ) && $location['location_name'] != '' ) { echo $location['location_name']; } else { echo ''; } ?>" />
+						<input type="submit" class="button button-secondary" name="get-location-data" id="whab-get-location-data" value="<?php _e( 'Get location data', 'whereabouts' ); ?>" />
+					</span>
+				</p>
+
+				<div class="whab-location-box">
+					<div class="whab-location-info">
+						<h3><?php _e( 'Choose Location…', 'whereabouts' ); ?></h3>
+						<div class="whab-loading"><span>loading</span></div>
+						<ul id="geolocation-choices"></ul>
+						<?php // If not set, diplay a hint, that the request language can be adjusted in the plugin's settings
+						if ( ! isset( $settings['language'] ) OR $settings['language'] == '' ) {
+							_e( '<p class="whab-language-settings-hint"><strong>Tip:</strong> You can set the language in which Google returns this information in the <a href="options-general.php?page=whereabouts">settings</a>.</a>', 'whereabouts' );
+						} ?>
+					</div>
+				</div><?php
+
+			}
+			else {
+				?>
+				<div class="whab-message"><?php _e( 'To use geolocation you need to enter your Google API key in the <a href="options-general.php?page=whereabouts">settings</a>.', 'whereabouts' ); ?></div>
+				<?php
+			}
 
 		} else { // If Whereabouts is *not* set to use Google, a message is displayed, that says why it would be a good idea to use this feature ?>
 
@@ -212,9 +226,9 @@ function whereabouts_action_javascript() {
 	$options = get_user_meta( $current_user->ID, 'whab_location_data', true );
 
 	// Load language form the settings, use english if not set
-	if ( isset( $settings['language'] ) && $settings['language'] != '' ) { 
+	if ( isset( $settings['language'] ) && $settings['language'] != '' ) {
 		$language = $settings['language'];
-	} else { 
+	} else {
 		$language = 'en';
 	}
 
@@ -227,12 +241,12 @@ function whereabouts_action_javascript() {
 			var marker;
 			var geocoder;
 
-			$.whab = { 
+			$.whab = {
 				lat: '',
 				long : '',
 				timezone : '',
 				offset : ''
-			}; 
+			};
 
 			// Initialize the map. Load geo data, if not set - use Edinburgh...
 			function initialize() {
@@ -262,7 +276,7 @@ function whereabouts_action_javascript() {
 					clearLB();
 					$( '.whab-location-box .whab-loading' ).show();
 					$( '.whab-location-box' ).show();
-					
+
 					// Do browser geolocating...
 					if ( navigator.geolocation ) {
 						navigator.geolocation.getCurrentPosition( function( position ) {
@@ -295,7 +309,7 @@ function whereabouts_action_javascript() {
 							});
 
 							// Set timezone
-							url = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + position.coords.latitude + ',' + position.coords.longitude + '&timestamp=<?php echo time(); ?>&language=<?php echo $language; ?>';
+							url = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + position.coords.latitude + ',' + position.coords.longitude + '&timestamp=<?php echo time(); ?>&language=<?php echo $language; ?>&key=<?php echo $settings['google-maps-api-key']; ?>';
 							getTimezoneInfo( url );
 
 						}, function() {
@@ -321,7 +335,7 @@ function whereabouts_action_javascript() {
 				// Better get crankin' and fetch some data from the Google...
 				var whabloc = $( '#whab-location-name' ).val();
 				var data = '';
-				var url = 'https://maps.googleapis.com/maps/api/geocode/json?language=<?php echo $language; ?>&address=' + whabloc;
+				var url = 'https://maps.googleapis.com/maps/api/geocode/json?language=<?php echo $language; ?>&address=' + whabloc + '&key=<?php echo $settings['google-maps-api-key']; ?>';
 
 				// Ajax request, baby!
 				$.get( url, data, function( location_data ) {
@@ -349,7 +363,7 @@ function whereabouts_action_javascript() {
 
 						// Now that the first time worked like a charm, let's ask Google a second time...
 						// Construct the url first
-						url = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + geo['lat'] + ',' + geo['lng'] + '&timestamp=<?php echo time(); ?>&language=<?php echo $language; ?>';
+						url = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + geo['lat'] + ',' + geo['lng'] + '&timestamp=<?php echo time(); ?>&language=<?php echo $language; ?>&key=<?php echo $settings['google-maps-api-key']; ?>';
 
 						// Set timezone
 						getTimezoneInfo( url );
@@ -389,7 +403,7 @@ function whereabouts_action_javascript() {
 					$( '.whab-location-box' ).css( 'height', 'auto' );
 				 });
 			});
-			
+
 			function clearLB() {
 				$( '.whab-location-box' ).hide();
 				$( '#geolocation-choices' ).empty();
