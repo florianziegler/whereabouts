@@ -461,7 +461,7 @@ function whereabouts_action_javascript() {
 }
 
 
-
+// TODO: Remove this, or make it work!
 
 function whereabouts_frontend_location_updater() {
 	whereabouts_build_dashboard_widget();
