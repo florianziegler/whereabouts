@@ -4,14 +4,14 @@
 	"version": "0.1.0",
 	"author": "Florian Ziegler",
 	"homepage": "http://florianziegler.de/whereabouts",
-
 	"devDependencies": {
-		"grunt":					"~0.4.5",
-		"grunt-contrib-uglify":		"~0.6.0",
-		"grunt-contrib-sass":		"~0.8.1",
-        "grunt-autoprefixer":       "~1.0.1",
-        "grunt-svgstore":           "~0.3.6",
-        "grunt-rsync":              "~0.6.2",
-		"grunt-contrib-watch":		"~0.6.1"
+		"grunt":				"latest",
+		"grunt-contrib-uglify":	"latest",
+		"grunt-sass":			"latest",
+		"sass":					"latest",
+		"grunt-autoprefixer":	"latest",
+		"grunt-svgstore":		"latest",
+		"grunt-rsync":			"latest",
+		"grunt-contrib-watch":	"latest"
 	}
 }

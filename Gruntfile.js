@@ -1,17 +1,19 @@
 module.exports = function( grunt ) {
 
+	const sass = require( 'sass' );
+
 	grunt.initConfig({
 
 		pkg: grunt.file.readJSON( 'package.json' ),
 
 		sass: {
-			style: {
-				options: {
-					style: 'compressed',
-                    sourcemap: 'none'
-				},
+			options: {
+				implementation: sass,
+				outputStyle: 'compressed',
+				sourceMap: true
+			},
+			build: {
 				files: {
-                    // 'css/whereabouts.css': 'scss/whereabouts.scss',
 					'css/whereabouts-admin.css': 'scss/whereabouts-admin.scss'
 				}
 			}
@@ -72,7 +74,7 @@ module.exports = function( grunt ) {
 	});
 
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-	grunt.loadNpmTasks( 'grunt-contrib-sass' );
+	grunt.loadNpmTasks( 'grunt-sass' );
     grunt.loadNpmTasks( 'grunt-autoprefixer' );
 	grunt.loadNpmTasks( 'grunt-svgstore' );
 	grunt.loadNpmTasks( 'grunt-rsync' );
