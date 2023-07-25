@@ -196,7 +196,7 @@ function whereabouts_validate_google_api_key() { ?>
 
 					// Make urls
 					url1 = 'https://maps.googleapis.com/maps/api/geocode/json?language=en&address=Edinburgh&key=' + key;
-					url2 = 'https://maps.googleapis.com/maps/api/timezone/json?timestamp=1000&language=en&location=55.953252,-3.188267&key=' + key;
+					url2 = 'https://maps.googleapis.com/maps/api/timezone/json?timestamp=1000&language=en&location=55.953252%2C-3.188267&key=' + key;
 
 					var data = '';
 
